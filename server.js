@@ -189,7 +189,7 @@ class GatewayServer {
         </div>
         <div class="flex flex-col">
           <h1 class="text-base sm:text-lg font-black tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-500 uppercase leading-none">
-            J1BTNL <span class="font-light text-slate-300">CORE</span>
+            J1BTNL <span class="font-light text-slate-300">CONFIG</span>
           </h1>
           <p class="text-[8px] sm:text-[9px] uppercase tracking-[0.15em] text-emerald-500/70 font-bold mt-1">SNI Injection Protocol</p>
         </div>
@@ -224,7 +224,7 @@ class GatewayServer {
       <div class="bg-[#0a100c] neon-border p-4 sm:p-5 rounded-xl flex items-center justify-between">
         <div>
           <p class="text-[10px] sm:text-xs text-slate-500 font-medium mb-1">UDP</p>
-          <p class="text-base sm:text-lg font-bold text-teal-400">ON</p>
+          <p class="text-base sm:text-lg font-bold text-teal-400">ONLINE</p>
         </div>
         <i class="fa-solid fa-bolt text-teal-900/50 text-xl sm:text-2xl"></i>
       </div>
@@ -240,7 +240,7 @@ class GatewayServer {
     <div class="bg-[#0a100c] border border-emerald-900/30 rounded-xl p-5 sm:p-6 space-y-5 shadow-lg shadow-black/50">
       <div class="flex items-center gap-2 border-b border-emerald-900/30 pb-3">
         <i class="fa-solid fa-key text-emerald-400"></i>
-        <h2 class="text-sm sm:text-md font-bold tracking-wide text-white">VLESS / TROJAN ACCOUNT GENERATOR</h2>
+        <h2 class="text-sm sm:text-md font-bold tracking-wide text-white">VLESS / TROJAN GENERATOR</h2>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
@@ -282,10 +282,8 @@ class GatewayServer {
                 <option value="/ASIA">🌏 /ASIA (Asia Region)</option>
                 <option value="/EUROPE">🇪🇺 /EUROPE</option>
                 <option value="/AMERICA">🌎 /AMERICA</option>
-                <option value="/PROXYLIST/ID,SG,JP">🔀 /PROXYLIST (Multi)</option>
-                <option value="/PUTAR">🎰 /PUTAR (Spin)</option>
               </select>
-              <input id="pathInput" type="text" value="/ALL" 
+              <input id="pathInput" type="text" value="/ID" 
                      class="w-full bg-[#0c130e] border border-emerald-900/50 rounded-lg px-3 py-2 text-sm text-white font-mono focus:border-emerald-500 focus:outline-none transition">
             </div>
           </div>
@@ -321,7 +319,7 @@ class GatewayServer {
 
           <button id="generateBtn" 
                   class="w-full bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold py-3 px-4 rounded-lg transition text-sm flex items-center justify-center gap-2 active:scale-95 shadow-lg shadow-emerald-900/50 mt-4">
-            <i class="fa-solid fa-bolt"></i> GENERATE CONFIG ACCOUNTS
+            <i class="fa-solid fa-bolt"></i> GENERATE CONFIG
           </button>
         </div>
 
