@@ -251,7 +251,7 @@ class GatewayServer {
           <i class="fa-solid fa-bolt text-xl"></i>
         </div>
         <div>
-          <h1 class="text-2xl font-black tracking-wider text-white glitch-text">J1BTNL<span class="text-green-400">.gate</span></h1>
+          <h1 class="text-2xl font-black tracking-wider text-white glitch-text">J1BTNL<span class="text-green-400">CONFIG SNI</span></h1>
         </div>
       </div>
       <div class="flex items-center gap-4">
