@@ -209,8 +209,8 @@ class GatewayServer {
     <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
       <div class="bg-[#0a100c] neon-border p-4 sm:p-5 rounded-xl flex items-center justify-between">
         <div>
-          <p class="text-[10px] sm:text-xs text-slate-500 font-medium mb-1">UPTIME</p>
-          <p id="uptime-val" class="text-base sm:text-lg font-bold text-white">${Math.floor(process.uptime())}s</p>
+          <p class="text-[10px] sm:text-xs text-slate-500 font-medium mb-1">SYSTEM UPTIME</p>
+          <p id="uptime-val" class="text-[11px] sm:text-xs md:text-sm font-bold text-white font-mono">Calculating...</p>
         </div>
         <i class="fa-solid fa-clock text-emerald-900/50 text-xl sm:text-2xl"></i>
       </div>
@@ -230,10 +230,10 @@ class GatewayServer {
       </div>
       <div class="bg-[#0a100c] neon-border p-4 sm:p-5 rounded-xl flex items-center justify-between">
         <div>
-          <p class="text-[10px] sm:text-xs text-slate-500 font-medium mb-1">NODE</p>
-          <p class="text-base sm:text-lg font-bold text-emerald-400">${process.version}</p>
+          <p id="date-val" class="text-[9px] text-slate-500 font-medium mb-1 uppercase tracking-wider">Loading Date...</p>
+          <p id="clock-val" class="text-base sm:text-lg font-bold text-emerald-400 font-mono">00:00:00</p>
         </div>
-        <i class="fa-brands fa-node-js text-emerald-900/50 text-xl sm:text-2xl"></i>
+        <i class="fa-solid fa-calendar-days text-emerald-900/50 text-xl sm:text-2xl"></i>
       </div>
     </div>
 
@@ -398,12 +398,43 @@ class GatewayServer {
       });
     }
 
-    // ==================== UPTIME ====================
-    let start = ${Math.floor(process.uptime())};
-    setInterval(() => {
-      start++;
+    // ==================== LOGIKA UPTIME & REAL-TIME CLOCK ====================
+    let totalSeconds = ${Math.floor(process.uptime())};
+
+    function updateDashboardTime() {
+      // 1. Hitung Uptime Struktural (Hari, Jam, Menit, Detik)
+      const d = Math.floor(totalSeconds / 86400);
+      const h = Math.floor((totalSeconds % 86400) / 3600);
+      const m = Math.floor((totalSeconds % 3600) / 60);
+      const s = totalSeconds % 60;
+
+      // Format string ringkas agar muat di grid: "1d 02h 15m 30s"
+      const uptimeStr = (d > 0 ? d + 'd ' : '') + 
+                        (h < 10 ? '0' + h : h) + 'h ' + 
+                        (m < 10 ? '0' + m : m) + 'm ' + 
+                        (s < 10 ? '0' + s : s) + 's';
+      
       const uptimeEl = document.getElementById('uptime-val');
-      if(uptimeEl) uptimeEl.innerText = start + 's';
+      if (uptimeEl) uptimeEl.innerText = uptimeStr;
+
+      // 2. Hitung Jam dan Tanggal Nyata (Real-time Server Clock)
+      const now = new Date();
+      const dateOptions = { weekday: 'long', day: 'numeric', month: 'short', year: 'numeric' };
+      const dateStr = now.toLocaleDateString('id-ID', dateOptions);
+      const timeStr = now.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false });
+
+      const dateEl = document.getElementById('date-val');
+      const clockEl = document.getElementById('clock-val');
+      
+      if (dateEl) dateEl.innerText = dateStr;
+      if (clockEl) clockEl.innerText = timeStr.replace(/\./g, ':'); // Pastikan separator menggunakan titik dua
+    }
+
+    // Jalankan kalkulasi pertama kali & set trigger interval per 1 detik
+    updateDashboardTime();
+    setInterval(() => {
+      totalSeconds++;
+      updateDashboardTime();
     }, 1000);
 
     // ==================== GENERATOR SCRIPTS ====================
@@ -532,18 +563,18 @@ class GatewayServer {
         });
       }
 
-      // LOGIKAL KONDISIONAL SHOW/HIDE SNI INPUT
+      // SHOW/HIDE SNI INPUT KONDISIONAL
       const sniSelect = document.getElementById('sniSelect');
       if (sniSelect) {
         sniSelect.addEventListener('change', function() {
           const sniInput = document.getElementById('sniInput');
           if (sniInput) {
             if (this.value === 'custom') {
-              sniInput.classList.remove('hidden'); // Munculkan kolom jika pilih 'custom'
+              sniInput.classList.remove('hidden');
               sniInput.value = '';
               sniInput.focus();
             } else {
-              sniInput.classList.add('hidden');    // Sembunyikan jika pilih bawaan daftar
+              sniInput.classList.add('hidden');
               sniInput.value = this.value;
               generateAccounts();
             }
