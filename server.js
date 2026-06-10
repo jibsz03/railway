@@ -156,7 +156,7 @@ class GatewayServer {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>💀 J1BTNL // GENERATOR CORE 💀</title>
+  <title>⚡ J1BTNL // GENERATOR SNI ⚡</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
@@ -167,70 +167,70 @@ class GatewayServer {
     }
     
     body {
-      background: radial-gradient(circle at 20% 30%, #0a0000, #000000);
+      background: radial-gradient(circle at 20% 30%, #001a00, #000000);
       background-attachment: fixed;
     }
     
     .cyber-grid {
       background-image: 
-        linear-gradient(rgba(255, 0, 100, 0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 0, 100, 0.05) 1px, transparent 1px);
+        linear-gradient(rgba(0, 255, 100, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 100, 0.05) 1px, transparent 1px);
       background-size: 40px 40px;
     }
     
-    .glow-red {
-      box-shadow: 0 0 15px rgba(255, 0, 100, 0.4), inset 0 0 5px rgba(255, 0, 100, 0.2);
+    .glow-green {
+      box-shadow: 0 0 15px rgba(0, 255, 100, 0.5), inset 0 0 5px rgba(0, 255, 100, 0.2);
     }
-    .glow-purple {
-      box-shadow: 0 0 12px rgba(156, 63, 255, 0.5);
+    .glow-lightgreen {
+      box-shadow: 0 0 12px rgba(50, 255, 120, 0.6);
     }
     
-    .neon-border-red {
-      border: 1px solid rgba(255, 0, 100, 0.4);
+    .neon-border-green {
+      border: 1px solid rgba(0, 255, 100, 0.5);
       transition: all 0.2s;
     }
-    .neon-border-red:hover {
-      border-color: #ff0066;
-      box-shadow: 0 0 12px #ff0066;
+    .neon-border-green:hover {
+      border-color: #00ff66;
+      box-shadow: 0 0 12px #00ff66;
     }
     
-    .neon-border-purple {
-      border: 1px solid rgba(156, 63, 255, 0.5);
+    .neon-border-lime {
+      border: 1px solid rgba(100, 255, 80, 0.5);
     }
-    .neon-border-purple:hover {
-      border-color: #9c3fff;
-      box-shadow: 0 0 12px #9c3fff;
+    .neon-border-lime:hover {
+      border-color: #6eff00;
+      box-shadow: 0 0 12px #6eff00;
     }
     
     ::-webkit-scrollbar { width: 6px; height: 6px; }
-    ::-webkit-scrollbar-track { background: #1a0a0f; }
-    ::-webkit-scrollbar-thumb { background: #ff0066; border-radius: 3px; }
-    ::-webkit-scrollbar-thumb:hover { background: #ff3399; }
+    ::-webkit-scrollbar-track { background: #0a1f0a; }
+    ::-webkit-scrollbar-thumb { background: #00ff66; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #33ff99; }
     
     @keyframes glitch {
-      0% { text-shadow: -2px 0 red, 2px 0 purple; }
-      50% { text-shadow: 2px 0 red, -2px 0 purple; }
-      100% { text-shadow: -2px 0 red, 2px 0 purple; }
+      0% { text-shadow: -2px 0 #00ff66, 2px 0 #00cc44; }
+      50% { text-shadow: 2px 0 #00ff66, -2px 0 #00cc44; }
+      100% { text-shadow: -2px 0 #00ff66, 2px 0 #00cc44; }
     }
     .glitch-text {
       animation: glitch 1.5s infinite ease-in-out;
     }
     
     .dark-glass {
-      background: rgba(10, 0, 5, 0.7);
+      background: rgba(0, 20, 5, 0.7);
       backdrop-filter: blur(4px);
-      border: 1px solid rgba(255, 0, 100, 0.2);
+      border: 1px solid rgba(0, 255, 100, 0.3);
     }
     
     input, select {
-      background: #0d0008;
-      border: 1px solid #33001a;
-      color: #ffccdd;
+      background: #051005;
+      border: 1px solid #00aa44;
+      color: #ccffdd;
     }
     input:focus, select:focus {
-      border-color: #ff0066;
+      border-color: #00ff66;
       outline: none;
-      box-shadow: 0 0 8px #ff0066;
+      box-shadow: 0 0 8px #00ff66;
     }
     
     button {
@@ -241,23 +241,23 @@ class GatewayServer {
     }
   </style>
 </head>
-<body class="text-pink-200 cyber-grid min-h-screen flex flex-col">
+<body class="text-green-200 cyber-grid min-h-screen flex flex-col">
 
-  <!-- HEADER DENGAN LOGO J1BTNL -->
-  <header class="border-b border-red-900/60 bg-black/80 backdrop-blur-md sticky top-0 z-50 px-6 py-4">
+  <!-- HEADER DENGAN LOGO PETIR -->
+  <header class="border-b border-green-900/60 bg-black/80 backdrop-blur-md sticky top-0 z-50 px-6 py-4">
     <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
       <div class="flex items-center gap-3">
-        <div class="h-12 w-12 rounded-lg bg-red-600/20 border border-red-500/60 flex items-center justify-center text-red-500 glow-red animate-pulse">
-          <i class="fa-solid fa-skull text-xl"></i>
+        <div class="h-12 w-12 rounded-lg bg-green-600/20 border border-green-500/60 flex items-center justify-center text-green-400 glow-green animate-pulse">
+          <i class="fa-solid fa-bolt text-xl"></i>
         </div>
         <div>
-          <h1 class="text-2xl font-black tracking-wider text-white glitch-text">J1BTNL<span class="text-red-500">.gate</span></h1>
+          <h1 class="text-2xl font-black tracking-wider text-white glitch-text">J1BTNL<span class="text-green-400">.gate</span></h1>
         </div>
       </div>
       <div class="flex items-center gap-4">
-        <div class="flex items-center gap-2 bg-black/60 neon-border-red px-5 py-2 rounded-full">
-          <span class="h-2.5 w-2.5 rounded-full bg-red-500 glow-red animate-ping"></span>
-          <span class="text-xs font-bold text-red-400 tracking-wider">🔥 CORE ACTIVE</span>
+        <div class="flex items-center gap-2 bg-black/60 neon-border-green px-5 py-2 rounded-full">
+          <span class="h-2.5 w-2.5 rounded-full bg-green-500 glow-green animate-ping"></span>
+          <span class="text-xs font-bold text-green-400 tracking-wider">⚡ CORE ACTIVE</span>
         </div>
       </div>
     </div>
@@ -265,29 +265,30 @@ class GatewayServer {
 
   <main class="max-w-7xl w-full mx-auto p-6 space-y-8 flex-grow">
 
-    <!-- STATISTIK CARD (tetap) -->
+    <!-- STATISTIK CARD: UPTIME, RAM, BANDWIDTH TERPAKAI, NODE VERSION -->
     <div class="grid grid-cols-1 md:grid-cols-4 gap-5">
-      <div class="dark-glass rounded-xl p-5 flex items-center justify-between neon-border-red">
-        <div><p class="text-xs text-red-400 font-bold mb-1">UPTIME</p><p id="uptime-val" class="text-2xl font-black text-white">0s</p></div>
-        <i class="fa-solid fa-hourglass-half text-3xl text-red-800/60"></i>
+      <div class="dark-glass rounded-xl p-5 flex items-center justify-between neon-border-green">
+        <div><p class="text-xs text-green-400 font-bold mb-1">UPTIME</p><p id="uptime-val" class="text-2xl font-black text-white">0s</p></div>
+        <i class="fa-solid fa-hourglass-half text-3xl text-green-800/60"></i>
       </div>
-      <div class="dark-glass rounded-xl p-5 flex items-center justify-between neon-border-purple">
-        <div><p class="text-xs text-purple-400 font-bold mb-1">RAM HUNGER</p><p class="text-2xl font-black text-white">${Math.round(process.memoryUsage().heapUsed / 1024 / 1024)} MB</p></div>
-        <i class="fa-solid fa-microchip text-3xl text-purple-800/60"></i>
+      <div class="dark-glass rounded-xl p-5 flex items-center justify-between neon-border-lime">
+        <div><p class="text-xs text-green-400 font-bold mb-1">RAM HUNGER</p><p class="text-2xl font-black text-white">${Math.round(process.memoryUsage().heapUsed / 1024 / 1024)} MB</p></div>
+        <i class="fa-solid fa-microchip text-3xl text-green-800/60"></i>
       </div>
-      <div class="dark-glass rounded-xl p-5 flex items-center justify-between neon-border-red">
-        <div><p class="text-xs text-red-400 font-bold mb-1">UDP TUNNEL</p><p class="text-xl font-bold text-red-500">ENABLED</p></div>
-        <i class="fa-solid fa-bolt text-3xl text-red-700/50"></i>
+      <!-- BANDWIDTH TERPAKAI (simulasi dinamis) -->
+      <div class="dark-glass rounded-xl p-5 flex items-center justify-between neon-border-green">
+        <div><p class="text-xs text-green-400 font-bold mb-1">BANDWIDTH TERPAKAI</p><p id="bandwidth-val" class="text-xl font-bold text-green-400">0 MB</p></div>
+        <i class="fa-solid fa-chart-line text-3xl text-green-700/50"></i>
       </div>
-      <div class="dark-glass rounded-xl p-5 flex items-center justify-between neon-border-purple">
-        <div><p class="text-xs text-purple-400 font-bold mb-1">NODE CORE</p><p class="text-xl font-bold text-purple-300">${process.version}</p></div>
-        <i class="fa-brands fa-node-js text-3xl text-purple-800/60"></i>
+      <div class="dark-glass rounded-xl p-5 flex items-center justify-between neon-border-lime">
+        <div><p class="text-xs text-green-400 font-bold mb-1">NODE CORE</p><p class="text-xl font-bold text-green-300">${process.version}</p></div>
+        <i class="fa-brands fa-node-js text-3xl text-green-800/60"></i>
       </div>
     </div>
 
-    <!-- ========== HANYA VLESS / TROJAN GENERATOR (SEMUA BAGIAN LAIN DIHAPUS) ========== -->
-    <div class="dark-glass rounded-xl p-6 space-y-5 neon-border-purple">
-      <div class="flex items-center gap-3 border-b border-purple-900/60 pb-3">
+    <!-- ========== HANYA VLESS / TROJAN GENERATOR ========== -->
+    <div class="dark-glass rounded-xl p-6 space-y-5 neon-border-lime">
+      <div class="flex items-center gap-3 border-b border-green-900/60 pb-3">
         <i class="fa-solid fa-key text-yellow-400 text-xl"></i>
         <h2 class="text-md font-black tracking-wider text-white">🔑 VLESS / TROJAN GENERATOR (UNLIMITED)</h2>
       </div>
@@ -295,37 +296,37 @@ class GatewayServer {
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <!-- INPUT SECTION -->
         <div class="space-y-4">
-          <div><label class="text-xs text-purple-400 font-bold block mb-1">UUID / PASSWORD</label><div class="flex gap-2"><input id="uuidInput" type="text" value="853b8456-0c0b-4bfa-b3b4-b2619248a9bc" class="w-full bg-black/80 border border-purple-800 rounded-lg px-3 py-2 text-sm text-pink-200"><button id="randomUuidBtn" class="bg-purple-900/40 border border-purple-600 text-purple-300 hover:bg-purple-700 px-3 py-2 rounded-lg text-xs"><i class="fa-solid fa-shuffle"></i> RANDOM</button></div></div>
-          <div><label class="text-xs text-purple-400 font-bold block mb-1">HOST / DOMAIN</label><input id="hostInput" type="text" value="${currentHost}" class="w-full bg-black/80 border border-purple-800 rounded-lg px-3 py-2 text-sm text-pink-200"></div>
-          <div><label class="text-xs text-purple-400 font-bold block mb-1">PORT</label><input id="portInput" type="text" value="443" class="w-full bg-black/80 border border-purple-800 rounded-lg px-3 py-2 text-sm text-pink-200"></div>
-          <div><label class="text-xs text-purple-400 font-bold block mb-1">PATH</label><div class="flex gap-2"><select id="pathSelect" class="bg-black/80 border border-purple-800 rounded-lg px-3 py-2 text-sm text-pink-200"><option value="/ALL">🌍 /ALL</option><option value="/ID">🇮🇩 /ID</option><option value="/SG">🇸🇬 /SG</option><option value="/JP">🇯🇵 /JP</option><option value="/US">🇺🇸 /US</option><option value="/ASIA">🌏 /ASIA</option><option value="/EUROPE">🇪🇺 /EUROPE</option><option value="/AMERICA">🌎 /AMERICA</option><option value="/PROXYLIST/ID,SG,JP">🔀 /PROXYLIST</option><option value="/PUTAR">🎰 /PUTAR</option></select><input id="pathInput" type="text" value="/ALL" class="w-full bg-black/80 border border-purple-800 rounded-lg px-3 py-2 text-sm text-pink-200"></div></div>
-          <div><label class="text-xs text-purple-400 font-bold block mb-1"><i class="fa-solid fa-fingerprint"></i> SNI (CUSTOM)</label><div class="flex gap-2"><select id="sniSelect" class="bg-black/80 border border-purple-800 rounded-lg px-3 py-2 text-sm"><option value="business.whatsapp.com">📱 business.whatsapp.com</option><option value="media-sin6-3.cdn.whatsapp.net">📡 media-sin6-3</option><option value="c.whatsapp.com">💬 c.whatsapp.com</option><option value="web.whatsapp.com">🌐 web.whatsapp.com</option><option value="v.whatsapp.net">📞 v.whatsapp.net</option><option value="custom">✏️ CUSTOM</option></select><input id="sniInput" type="text" value="business.whatsapp.com" class="w-full bg-black/80 border border-purple-800 rounded-lg px-3 py-2 text-sm text-pink-200"></div><p class="text-[10px] text-pink-700">Pilih preset atau ketik manual</p></div>
-          <div><label class="text-xs text-purple-400 font-bold block mb-1">REMARK / NAMA</label><input id="remarkInput" type="text" value="J1BTNL" class="w-full bg-black/80 border border-purple-800 rounded-lg px-3 py-2 text-sm text-pink-200"></div>
-          <button id="generateBtn" class="w-full bg-gradient-to-r from-red-700 to-purple-800 hover:from-red-600 hover:to-purple-700 text-white font-bold py-3 rounded-lg text-sm flex justify-center gap-2 shadow-lg"><i class="fa-solid fa-bolt"></i> GENERATE ACCOUNTS</button>
+          <div><label class="text-xs text-green-400 font-bold block mb-1">UUID / PASSWORD</label><div class="flex gap-2"><input id="uuidInput" type="text" value="853b8456-0c0b-4bfa-b3b4-b2619248a9bc" class="w-full bg-black/80 border border-green-700 rounded-lg px-3 py-2 text-sm text-green-200"><button id="randomUuidBtn" class="bg-green-900/40 border border-green-600 text-green-300 hover:bg-green-700 px-3 py-2 rounded-lg text-xs"><i class="fa-solid fa-shuffle"></i> RANDOM</button></div></div>
+          <div><label class="text-xs text-green-400 font-bold block mb-1">HOST / DOMAIN</label><input id="hostInput" type="text" value="${currentHost}" class="w-full bg-black/80 border border-green-700 rounded-lg px-3 py-2 text-sm text-green-200"></div>
+          <div><label class="text-xs text-green-400 font-bold block mb-1">PORT</label><input id="portInput" type="text" value="443" class="w-full bg-black/80 border border-green-700 rounded-lg px-3 py-2 text-sm text-green-200"></div>
+          <div><label class="text-xs text-green-400 font-bold block mb-1">PATH</label><div class="flex gap-2"><select id="pathSelect" class="bg-black/80 border border-green-700 rounded-lg px-3 py-2 text-sm text-green-200"><option value="/ALL">🌍 /ALL</option><option value="/ID">🇮🇩 /ID</option><option value="/SG">🇸🇬 /SG</option><option value="/JP">🇯🇵 /JP</option><option value="/US">🇺🇸 /US</option><option value="/ASIA">🌏 /ASIA</option><option value="/EUROPE">🇪🇺 /EUROPE</option><option value="/AMERICA">🌎 /AMERICA</option><option value="/PROXYLIST/ID,SG,JP">🔀 /PROXYLIST</option><option value="/PUTAR">🎰 /PUTAR</option></select><input id="pathInput" type="text" value="/ALL" class="w-full bg-black/80 border border-green-700 rounded-lg px-3 py-2 text-sm text-green-200"></div></div>
+          <div><label class="text-xs text-green-400 font-bold block mb-1"><i class="fa-solid fa-fingerprint"></i> SNI (CUSTOM)</label><div class="flex gap-2"><select id="sniSelect" class="bg-black/80 border border-green-700 rounded-lg px-3 py-2 text-sm"><option value="business.whatsapp.com">📱 business.whatsapp.com</option><option value="media-sin6-3.cdn.whatsapp.net">📡 media-sin6-3</option><option value="c.whatsapp.com">💬 c.whatsapp.com</option><option value="web.whatsapp.com">🌐 web.whatsapp.com</option><option value="v.whatsapp.net">📞 v.whatsapp.net</option><option value="custom">✏️ CUSTOM</option></select><input id="sniInput" type="text" value="business.whatsapp.com" class="w-full bg-black/80 border border-green-700 rounded-lg px-3 py-2 text-sm text-green-200"></div><p class="text-[10px] text-green-700">Pilih preset atau ketik manual</p></div>
+          <div><label class="text-xs text-green-400 font-bold block mb-1">REMARK / NAMA</label><input id="remarkInput" type="text" value="J1BTNL" class="w-full bg-black/80 border border-green-700 rounded-lg px-3 py-2 text-sm text-green-200"></div>
+          <button id="generateBtn" class="w-full bg-gradient-to-r from-green-700 to-lime-700 hover:from-green-600 hover:to-lime-600 text-white font-bold py-3 rounded-lg text-sm flex justify-center gap-2 shadow-lg"><i class="fa-solid fa-bolt"></i> GENERATE ACCOUNTS</button>
         </div>
 
         <!-- OUTPUT SECTION -->
         <div class="space-y-3">
-          <div class="bg-black/60 rounded-lg p-4 border border-red-800"><div class="flex justify-between mb-2"><span class="text-[10px] bg-purple-600/40 text-purple-300 px-2 py-0.5 rounded font-bold">VLESS LINK</span><button onclick="copyText(document.getElementById('vlessOutput').innerText)" class="text-xs bg-red-900/40 border border-red-700 text-red-300 hover:bg-red-800 px-2 py-1 rounded"><i class="fa-regular fa-copy"></i> COPY</button></div><p id="vlessOutput" class="text-xs text-purple-200 font-mono break-all bg-black/80 p-2 rounded">Loading...</p></div>
-          <div class="bg-black/60 rounded-lg p-4 border border-purple-800"><div class="flex justify-between mb-2"><span class="text-[10px] bg-orange-600/40 text-orange-300 px-2 py-0.5 rounded font-bold">TROJAN LINK</span><button onclick="copyText(document.getElementById('trojanOutput').innerText)" class="text-xs bg-red-900/40 border border-red-700 text-red-300 hover:bg-red-800 px-2 py-1 rounded"><i class="fa-regular fa-copy"></i> COPY</button></div><p id="trojanOutput" class="text-xs text-orange-200 font-mono break-all bg-black/80 p-2 rounded">Loading...</p></div>
-          <div class="bg-black/70 border border-red-800 rounded-lg p-3"><p class="text-[10px] text-red-400 mb-1">⚔️ CLASH META / V2RAY FORMAT</p><pre id="clashOutput" class="text-[11px] text-pink-300 font-mono whitespace-pre-wrap bg-black/90 p-2 rounded max-h-48 overflow-y-auto">Loading...</pre></div>
+          <div class="bg-black/60 rounded-lg p-4 border border-green-700"><div class="flex justify-between mb-2"><span class="text-[10px] bg-green-600/40 text-green-300 px-2 py-0.5 rounded font-bold">VLESS LINK</span><button onclick="copyText(document.getElementById('vlessOutput').innerText)" class="text-xs bg-green-900/40 border border-green-700 text-green-300 hover:bg-green-800 px-2 py-1 rounded"><i class="fa-regular fa-copy"></i> COPY</button></div><p id="vlessOutput" class="text-xs text-green-200 font-mono break-all bg-black/80 p-2 rounded">Loading...</p></div>
+          <div class="bg-black/60 rounded-lg p-4 border border-lime-700"><div class="flex justify-between mb-2"><span class="text-[10px] bg-lime-600/40 text-lime-300 px-2 py-0.5 rounded font-bold">TROJAN LINK</span><button onclick="copyText(document.getElementById('trojanOutput').innerText)" class="text-xs bg-green-900/40 border border-green-700 text-green-300 hover:bg-green-800 px-2 py-1 rounded"><i class="fa-regular fa-copy"></i> COPY</button></div><p id="trojanOutput" class="text-xs text-lime-200 font-mono break-all bg-black/80 p-2 rounded">Loading...</p></div>
+          <div class="bg-black/70 border border-green-700 rounded-lg p-3"><p class="text-[10px] text-green-400 mb-1">⚔️ CLASH META / V2RAY FORMAT</p><pre id="clashOutput" class="text-[11px] text-green-300 font-mono whitespace-pre-wrap bg-black/90 p-2 rounded max-h-48 overflow-y-auto">Loading...</pre></div>
         </div>
       </div>
     </div>
 
   </main>
 
-  <footer class="border-t border-red-950 bg-black/80 px-6 py-4 text-center text-xs text-pink-800">
+  <footer class="border-t border-green-950 bg-black/80 px-6 py-4 text-center text-xs text-green-800">
     <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
-      <p>💀 J1BTNL — CHANNEL @J1BTNL | DEVILS WILL RISE</p>
-      <p><i class="fa-solid fa-skull"></i> TANPA BATAS • TANPA FILTER</p>
+      <p>⚡ J1BTNL — CHANNEL @J1BTNL | DEVILS WILL RISE</p>
+      <p><i class="fa-solid fa-bolt"></i> TANPA BATAS • TANPA FILTER</p>
     </div>
   </footer>
 
-  <div id="toast" class="fixed bottom-6 right-6 bg-red-700 text-white font-bold px-5 py-3 rounded-lg shadow-2xl opacity-0 pointer-events-none transition-all duration-300 text-xs z-50 flex items-center gap-2 border border-pink-500"><i class="fa-solid fa-skull"></i> COPIED TO CLIPBOARD</div>
+  <div id="toast" class="fixed bottom-6 right-6 bg-green-700 text-white font-bold px-5 py-3 rounded-lg shadow-2xl opacity-0 pointer-events-none transition-all duration-300 text-xs z-50 flex items-center gap-2 border border-green-500"><i class="fa-solid fa-bolt"></i> COPIED TO CLIPBOARD</div>
 
   <script>
-    // ========== SEMUA FUNGSI TETAP SAMA PERSIS (TIDAK DIUBAH) ==========
+    // ========== SEMUA FUNGSI TETAP SAMA PERSIS + BANDWIDTH SIMULASI ==========
     function copyText(text) {
       navigator.clipboard.writeText(text).then(() => {
         const toast = document.getElementById('toast');
@@ -343,6 +344,14 @@ class GatewayServer {
       start++;
       document.getElementById('uptime-val').innerText = start + 's';
     }, 1000);
+
+    // Simulasi bandwidth terpakai (random naik turun)
+    let bandwidthMB = 0;
+    setInterval(() => {
+      bandwidthMB = Math.min(2048, bandwidthMB + Math.floor(Math.random() * 20));
+      if (bandwidthMB > 2000) bandwidthMB = 200;
+      document.getElementById('bandwidth-val').innerText = bandwidthMB + ' MB';
+    }, 4000);
 
     function generateUUID() {
       const uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
