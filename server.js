@@ -151,7 +151,7 @@ class GatewayServer {
       
       res.writeHead(200, { 'Content-Type': 'text/html' });
       res.end(`
-        <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -179,71 +179,71 @@ class GatewayServer {
 </head>
 <body class="text-slate-300 min-h-screen flex flex-col justify-between selection:bg-emerald-600 selection:text-white">
 
-  <header class="relative overflow-hidden bg-[#020403] border-b border-emerald-500/20 px-6 py-6 shadow-[0_4px_30px_rgba(16,185,129,0.05)] sticky top-0 z-50">
-    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-emerald-500 to-transparent opacity-50"></div>
-    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6 z-10 relative">
-      <div class="flex items-center gap-4">
-        <div class="relative flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-900 to-black border border-emerald-500/30 shadow-[0_0_15px_rgba(16,185,129,0.2)]">
-          <i class="fa-solid fa-shield-halved text-2xl text-emerald-400"></i>
-          <div class="absolute inset-0 rounded-2xl border border-emerald-400/20 animate-ping opacity-20"></div>
+  <header class="relative overflow-hidden bg-[#020403] border-b border-emerald-500/20 px-4 py-3 shadow-[0_2px_15px_rgba(16,185,129,0.03)] sticky top-0 z-50">
+    <div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-emerald-500 to-transparent opacity-50"></div>
+    <div class="max-w-7xl mx-auto flex items-center justify-between gap-2 z-10 relative">
+      <div class="flex items-center gap-3">
+        <div class="relative flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-gradient-to-br from-emerald-900 to-black border border-emerald-500/30">
+          <i class="fa-solid fa-shield-halved text-sm sm:text-base text-emerald-400"></i>
+          <div class="absolute inset-0 rounded-lg sm:rounded-xl border border-emerald-400/20 animate-ping opacity-20 hidden sm:block"></div>
         </div>
-        <div class="flex flex-col text-center sm:text-left">
-          <h1 class="text-2xl sm:text-3xl font-black tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-500 uppercase drop-shadow-sm">
+        <div class="flex flex-col">
+          <h1 class="text-base sm:text-lg font-black tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-500 uppercase leading-none">
             J1BTNL <span class="font-light text-slate-300">CORE</span>
           </h1>
-          <p class="text-[10px] sm:text-xs uppercase tracking-[0.3em] text-emerald-500/70 font-bold mt-1">Advanced SNI Injection Protocol</p>
+          <p class="text-[8px] sm:text-[9px] uppercase tracking-[0.15em] text-emerald-500/70 font-bold mt-1">SNI Injection Protocol</p>
         </div>
       </div>
-      <div class="flex items-center gap-3 bg-[#050a07] border border-emerald-800/60 px-5 py-2.5 rounded-lg shadow-inner">
-        <div class="relative flex h-2.5 w-2.5">
+      <div class="flex items-center gap-2 bg-[#050a07] border border-emerald-800/60 px-2.5 py-1.5 rounded text-xs shadow-inner">
+        <div class="relative flex h-1.5 w-1.5">
           <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-          <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+          <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500"></span>
         </div>
-        <span class="text-xs font-bold text-emerald-300 tracking-widest">NETWORK: ESTABLISHED</span>
+        <span class="text-[9px] font-bold text-emerald-300 tracking-wider uppercase">ONLINE</span>
       </div>
     </div>
   </header>
 
-  <main class="max-w-7xl w-full mx-auto p-6 space-y-8 flex-grow">
+  <main class="max-w-7xl w-full mx-auto p-4 sm:p-6 space-y-6 sm:space-y-8 flex-grow">
     
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-      <div class="bg-[#0a100c] neon-border p-5 rounded-xl flex items-center justify-between">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
+      <div class="bg-[#0a100c] neon-border p-4 sm:p-5 rounded-xl flex items-center justify-between">
         <div>
-          <p class="text-xs text-slate-500 font-medium mb-1">SYSTEM UPTIME</p>
-          <p id="uptime-val" class="text-lg font-bold text-white">${Math.floor(process.uptime())}s</p>
+          <p class="text-[10px] sm:text-xs text-slate-500 font-medium mb-1">UPTIME</p>
+          <p id="uptime-val" class="text-base sm:text-lg font-bold text-white">${Math.floor(process.uptime())}s</p>
         </div>
-        <i class="fa-solid fa-clock text-emerald-900/50 text-2xl"></i>
+        <i class="fa-solid fa-clock text-emerald-900/50 text-xl sm:text-2xl"></i>
       </div>
-      <div class="bg-[#0a100c] neon-border p-5 rounded-xl flex items-center justify-between">
+      <div class="bg-[#0a100c] neon-border p-4 sm:p-5 rounded-xl flex items-center justify-between">
         <div>
-          <p class="text-xs text-slate-500 font-medium mb-1">RAM ALLOCATION</p>
-          <p class="text-lg font-bold text-white">${Math.round(process.memoryUsage().heapUsed / 1024 / 1024)} MB</p>
+          <p class="text-[10px] sm:text-xs text-slate-500 font-medium mb-1">RAM</p>
+          <p class="text-base sm:text-lg font-bold text-white">${Math.round(process.memoryUsage().heapUsed / 1024 / 1024)} MB</p>
         </div>
-        <i class="fa-solid fa-microchip text-emerald-900/50 text-2xl"></i>
+        <i class="fa-solid fa-microchip text-emerald-900/50 text-xl sm:text-2xl"></i>
       </div>
-      <div class="bg-[#0a100c] neon-border p-5 rounded-xl flex items-center justify-between">
+      <div class="bg-[#0a100c] neon-border p-4 sm:p-5 rounded-xl flex items-center justify-between">
         <div>
-          <p class="text-xs text-slate-500 font-medium mb-1">UDP TUNNELING</p>
-          <p class="text-lg font-bold text-teal-400">ENABLED</p>
+          <p class="text-[10px] sm:text-xs text-slate-500 font-medium mb-1">UDP</p>
+          <p class="text-base sm:text-lg font-bold text-teal-400">ON</p>
         </div>
-        <i class="fa-solid fa-bolt text-teal-900/50 text-2xl"></i>
+        <i class="fa-solid fa-bolt text-teal-900/50 text-xl sm:text-2xl"></i>
       </div>
-      <div class="bg-[#0a100c] neon-border p-5 rounded-xl flex items-center justify-between">
+      <div class="bg-[#0a100c] neon-border p-4 sm:p-5 rounded-xl flex items-center justify-between">
         <div>
-          <p class="text-xs text-slate-500 font-medium mb-1">NODE VERSION</p>
-          <p class="text-lg font-bold text-emerald-400">${process.version}</p>
+          <p class="text-[10px] sm:text-xs text-slate-500 font-medium mb-1">NODE</p>
+          <p class="text-base sm:text-lg font-bold text-emerald-400">${process.version}</p>
         </div>
-        <i class="fa-brands fa-node-js text-emerald-900/50 text-2xl"></i>
+        <i class="fa-brands fa-node-js text-emerald-900/50 text-xl sm:text-2xl"></i>
       </div>
     </div>
 
-    <div class="bg-[#0a100c] border border-emerald-900/30 rounded-xl p-6 space-y-5 shadow-lg shadow-black/50">
+    <div class="bg-[#0a100c] border border-emerald-900/30 rounded-xl p-5 sm:p-6 space-y-5 shadow-lg shadow-black/50">
       <div class="flex items-center gap-2 border-b border-emerald-900/30 pb-3">
         <i class="fa-solid fa-key text-emerald-400"></i>
-        <h2 class="text-md font-bold tracking-wide text-white">VLESS / TROJAN ACCOUNT GENERATOR</h2>
+        <h2 class="text-sm sm:text-md font-bold tracking-wide text-white">VLESS / TROJAN ACCOUNT GENERATOR</h2>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
         
         <div class="space-y-4">
           <div>
@@ -271,9 +271,9 @@ class GatewayServer {
 
           <div>
             <label class="text-xs text-slate-400 font-medium mb-1.5 block">Path</label>
-            <div class="flex gap-2">
+            <div class="flex flex-col sm:flex-row gap-2">
               <select id="pathSelect" 
-                      class="bg-[#0c130e] border border-emerald-900/50 rounded-lg px-3 py-2 text-sm text-white font-mono focus:border-emerald-500 focus:outline-none transition">
+                      class="bg-[#0c130e] border border-emerald-900/50 rounded-lg px-3 py-2 text-sm text-white font-mono focus:border-emerald-500 focus:outline-none transition w-full sm:w-auto">
                 <option value="/ALL">🌍 /ALL (Rotate Global)</option>
                 <option value="/ID">🇮🇩 /ID (Indonesia)</option>
                 <option value="/SG">🇸🇬 /SG (Singapore)</option>
@@ -329,34 +329,34 @@ class GatewayServer {
           <label class="text-sm text-emerald-400 font-bold block border-b border-emerald-900/50 pb-2">📋 Hasil Generate</label>
           
           <div class="space-y-3">
-            <div class="bg-[#060a07] rounded-lg p-4 border border-emerald-950 hover:border-emerald-800 transition">
+            <div class="bg-[#060a07] rounded-lg p-3 sm:p-4 border border-emerald-950 hover:border-emerald-800 transition">
               <div class="flex items-center justify-between mb-2">
                 <span class="text-[10px] bg-purple-500/10 text-purple-400 px-2 py-0.5 rounded font-bold border border-purple-500/20">VLESS PROTOCOL</span>
                 <button onclick="copyText(document.getElementById('vlessOutput').textContent)" 
-                        class="text-xs bg-[#0c130e] border border-emerald-900/50 text-slate-400 hover:text-emerald-400 px-3 py-1.5 rounded transition flex items-center gap-1 active:scale-95">
+                        class="text-[10px] sm:text-xs bg-[#0c130e] border border-emerald-900/50 text-slate-400 hover:text-emerald-400 px-2 sm:px-3 py-1.5 rounded transition flex items-center gap-1 active:scale-95">
                   <i class="fa-regular fa-copy"></i> COPY
                 </button>
               </div>
-              <p id="vlessOutput" class="text-xs text-purple-300 font-mono break-all leading-relaxed bg-[#080d0a] p-3 rounded border border-emerald-900/30">
+              <p id="vlessOutput" class="text-[10px] sm:text-xs text-purple-300 font-mono break-all leading-relaxed bg-[#080d0a] p-2 sm:p-3 rounded border border-emerald-900/30">
                 Loading...
               </p>
             </div>
 
-            <div class="bg-[#060a07] rounded-lg p-4 border border-emerald-950 hover:border-emerald-800 transition">
+            <div class="bg-[#060a07] rounded-lg p-3 sm:p-4 border border-emerald-950 hover:border-emerald-800 transition">
               <div class="flex items-center justify-between mb-2">
                 <span class="text-[10px] bg-orange-500/10 text-orange-400 px-2 py-0.5 rounded font-bold border border-orange-500/20">TROJAN PROTOCOL</span>
                 <button onclick="copyText(document.getElementById('trojanOutput').textContent)" 
-                        class="text-xs bg-[#0c130e] border border-emerald-900/50 text-slate-400 hover:text-emerald-400 px-3 py-1.5 rounded transition flex items-center gap-1 active:scale-95">
+                        class="text-[10px] sm:text-xs bg-[#0c130e] border border-emerald-900/50 text-slate-400 hover:text-emerald-400 px-2 sm:px-3 py-1.5 rounded transition flex items-center gap-1 active:scale-95">
                   <i class="fa-regular fa-copy"></i> COPY
                 </button>
               </div>
-              <p id="trojanOutput" class="text-xs text-orange-300 font-mono break-all leading-relaxed bg-[#080d0a] p-3 rounded border border-emerald-900/30">
+              <p id="trojanOutput" class="text-[10px] sm:text-xs text-orange-300 font-mono break-all leading-relaxed bg-[#080d0a] p-2 sm:p-3 rounded border border-emerald-900/30">
                 Loading...
               </p>
             </div>
           </div>
 
-          <div class="bg-[#0c130e] border border-emerald-900/50 rounded-lg p-4 mt-2">
+          <div class="bg-[#0c130e] border border-emerald-900/50 rounded-lg p-3 sm:p-4 mt-2">
             <div class="flex items-center justify-between mb-2">
               <p class="text-[10px] font-bold text-emerald-500/80">🔗 CLASH META / V2RAY RAW CONFIG</p>
               <button onclick="copyText(document.getElementById('clashOutput').textContent)" 
@@ -364,7 +364,7 @@ class GatewayServer {
                 <i class="fa-regular fa-copy"></i>
               </button>
             </div>
-            <pre id="clashOutput" class="text-[11px] text-slate-400 font-mono break-all leading-relaxed whitespace-pre-wrap bg-[#080d0a] p-3 rounded border border-emerald-900/30 max-h-56 overflow-y-auto">Loading...</pre>
+            <pre id="clashOutput" class="text-[10px] sm:text-[11px] text-slate-400 font-mono break-all leading-relaxed whitespace-pre-wrap bg-[#080d0a] p-2 sm:p-3 rounded border border-emerald-900/30 max-h-56 overflow-y-auto">Loading...</pre>
           </div>
         </div>
 
@@ -373,10 +373,10 @@ class GatewayServer {
 
   </main>
 
-  <footer class="border-t border-emerald-950 bg-[#040605] px-6 py-5 text-center text-xs text-slate-600">
-    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
+  <footer class="border-t border-emerald-950 bg-[#040605] px-4 sm:px-6 py-4 sm:py-5 text-center text-[10px] sm:text-xs text-slate-600">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-3">
       <p>&copy; ${new Date().getFullYear()} J1BTNL CONFIG SNI. ALL SYSTEM VECTORS OPERATIONAL.</p>
-      <p class="flex items-center gap-2"><i class="fa-solid fa-shield-check text-emerald-500/60"></i> SECURED BY END-TO-END KERNEL TUNNEL</p>
+      <p class="flex items-center gap-1 sm:gap-2"><i class="fa-solid fa-shield-check text-emerald-500/60"></i> SECURED BY END-TO-END KERNEL TUNNEL</p>
     </div>
   </footer>
 
