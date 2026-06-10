@@ -274,13 +274,13 @@ class GatewayServer {
             <div class="flex flex-col sm:flex-row gap-2">
               <select id="pathSelect" 
                       class="bg-[#0c130e] border border-emerald-900/50 rounded-lg px-3 py-2 text-sm text-white font-mono focus:border-emerald-500 focus:outline-none transition w-full sm:w-auto">
-                <option value="/ALL">🌍 /ALL (Rotate Global)</option>
                 <option value="/ID">🇮🇩 /ID (Indonesia)</option>
                 <option value="/SG">🇸🇬 /SG (Singapore)</option>
                 <option value="/JP">🇯🇵 /JP (Japan)</option>
                 <option value="/US">🇺🇸 /US (USA)</option>
+				<option value="/EUROPE">🇪🇺 /EUROPE</option>
                 <option value="/ASIA">🌏 /ASIA (Asia Region)</option>
-                <option value="/EUROPE">🇪🇺 /EUROPE</option>
+				<option value="/ALL">🌍 /ALL (Rotate Global)</option>
                 <option value="/AMERICA">🌎 /AMERICA</option>
               </select>
               <input id="pathInput" type="text" value="/ID" 
