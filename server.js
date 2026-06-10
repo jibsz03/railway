@@ -193,7 +193,7 @@ class GatewayServer {
                 </div>
                 <div>
                   <h1 class="text-xl font-bold tracking-wider text-white">J1BTNL CONFIG <span class="text-cyan-400">SNI</span></h1>
-                  <p class="text-xs text-slate-500">J1BTNL CONFIG SNI • DASHBOARD</p>
+                  <p class="text-xs text-slate-500">PREMIUM SNI CONFIG GENERATOR</p>
                 </div>
               </div>
               <div class="flex items-center gap-4">
@@ -205,9 +205,90 @@ class GatewayServer {
             </div>
           </header>
 
-          <main class="max-w-6xl w-full mx-auto p-6 flex-grow flex items-center justify-center">
+          <main class="max-w-7xl w-full mx-auto p-6 space-y-8 flex-grow">
             
-            
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+              <div class="bg-[#0d0e16] neon-border p-5 rounded-xl flex items-center justify-between">
+                <div>
+                  <p class="text-xs text-slate-500 font-medium mb-1">SYSTEM UPTIME</p>
+                  <p id="uptime-val" class="text-lg font-bold text-white">${Math.floor(process.uptime())}s</p>
+                </div>
+                <i class="fa-solid fa-clock text-slate-700 text-2xl"></i>
+              </div>
+              <div class="bg-[#0d0e16] neon-border p-5 rounded-xl flex items-center justify-between">
+                <div>
+                  <p class="text-xs text-slate-500 font-medium mb-1">RAM ALLOCATION</p>
+                  <p class="text-lg font-bold text-white">${Math.round(process.memoryUsage().heapUsed / 1024 / 1024)} MB</p>
+                </div>
+                <i class="fa-solid fa-microchip text-slate-700 text-2xl"></i>
+              </div>
+              <div class="bg-[#0d0e16] neon-border p-5 rounded-xl flex items-center justify-between">
+                <div>
+                  <p class="text-xs text-slate-500 font-medium mb-1">UDP TUNNELING</p>
+                  <p class="text-lg font-bold text-emerald-400">ENABLED</p>
+                </div>
+                <i class="fa-solid fa-bolt text-emerald-900/50 text-2xl"></i>
+              </div>
+              <div class="bg-[#0d0e16] neon-border p-5 rounded-xl flex items-center justify-between">
+                <div>
+                  <p class="text-xs text-slate-500 font-medium mb-1">NODE VERSION</p>
+                  <p class="text-lg font-bold text-blue-400">${process.version}</p>
+                </div>
+                <i class="fa-brands fa-node-js text-blue-900/50 text-2xl"></i>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              
+              <div class="bg-[#0d0e16] border border-slate-900 rounded-xl p-6 space-y-4">
+                <div class="flex items-center gap-2 border-b border-slate-900 pb-3">
+                  <i class="fa-solid fa-network-wired text-blue-400"></i>
+                  <h2 class="text-md font-bold tracking-wide text-white">SNI WEBSOCKET ENDPOINTS</h2>
+                </div>
+                <div class="space-y-3 max-h-[420px] overflow-y-auto pr-1">
+                  
+                  <div class="bg-[#10121d] border border-slate-900/60 p-4 rounded-lg flex flex-col md:flex-row justify-between items-start md:items-center gap-3 hover:bg-[#121524] transition">
+                    <div>
+                      <span class="text-xs bg-blue-500/10 text-blue-400 px-2 py-0.5 rounded font-bold border border-blue-500/20">TARGET COUNTRY</span>
+                      <p class="text-sm font-semibold text-slate-200 mt-2">${protocolWs}://${currentHost}/ID</p>
+                    </div>
+                    <button onclick="copyText('${protocolWs}://${currentHost}/ID')" class="text-xs bg-[#171a29] border border-slate-800 text-slate-400 hover:text-white hover:border-blue-500 px-3 py-1.5 rounded transition flex items-center gap-1.5 active:scale-95">
+                      <i class="fa-regular fa-copy"></i> COPY
+                    </button>
+                  </div>
+
+                  <div class="bg-[#10121d] border border-slate-900/60 p-4 rounded-lg flex flex-col md:flex-row justify-between items-start md:items-center gap-3 hover:bg-[#121524] transition">
+                    <div>
+                      <span class="text-xs bg-purple-500/10 text-purple-400 px-2 py-0.5 rounded font-bold border border-purple-500/20">MULTI-COUNTRY (ROTATE)</span>
+                      <p class="text-sm font-semibold text-slate-200 mt-2">${protocolWs}://${currentHost}/PROXYLIST/ID,SG,JP</p>
+                    </div>
+                    <button onclick="copyText('${protocolWs}://${currentHost}/PROXYLIST/ID,SG,JP')" class="text-xs bg-[#171a29] border border-slate-800 text-slate-400 hover:text-white hover:border-blue-500 px-3 py-1.5 rounded transition flex items-center gap-1.5 active:scale-95">
+                      <i class="fa-regular fa-copy"></i> COPY
+                    </button>
+                  </div>
+
+                  <div class="bg-[#10121d] border border-slate-900/60 p-4 rounded-lg flex flex-col md:flex-row justify-between items-start md:items-center gap-3 hover:bg-[#121524] transition">
+                    <div>
+                      <span class="text-xs bg-amber-500/10 text-amber-400 px-2 py-0.5 rounded font-bold border border-amber-500/20">REGION MATRICES</span>
+                      <p class="text-sm font-semibold text-slate-200 mt-2">${protocolWs}://${currentHost}/ASIA</p>
+                    </div>
+                    <button onclick="copyText('${protocolWs}://${currentHost}/ASIA')" class="text-xs bg-[#171a29] border border-slate-800 text-slate-400 hover:text-white hover:border-blue-500 px-3 py-1.5 rounded transition flex items-center gap-1.5 active:scale-95">
+                      <i class="fa-regular fa-copy"></i> COPY
+                    </button>
+                  </div>
+
+                  <div class="bg-[#10121d] border border-slate-900/60 p-4 rounded-lg flex flex-col md:flex-row justify-between items-start md:items-center gap-3 hover:bg-[#121524] transition">
+                    <div>
+                      <span class="text-xs bg-pink-500/10 text-pink-400 px-2 py-0.5 rounded font-bold border border-pink-500/20">GLOBAL CLUSTER</span>
+                      <p class="text-sm font-semibold text-slate-200 mt-2">${protocolWs}://${currentHost}/ALL</p>
+                    </div>
+                    <button onclick="copyText('${protocolWs}://${currentHost}/ALL')" class="text-xs bg-[#171a29] border border-slate-800 text-slate-400 hover:text-white hover:border-blue-500 px-3 py-1.5 rounded transition flex items-center gap-1.5 active:scale-95">
+                      <i class="fa-regular fa-copy"></i> COPY
+                    </button>
+                  </div>
+
+                </div>
+              </div>
 
               <div class="bg-[#0d0e16] border border-slate-900 rounded-xl p-6 space-y-4">
                 <div class="flex items-center gap-2 border-b border-slate-900 pb-3">
@@ -278,7 +359,7 @@ class GatewayServer {
             </div>
 
             <!-- ==================== VLESS & TROJAN GENERATOR ==================== -->
-            <div class="bg-white/5 backdrop-blur-2xl border border-cyan-500/20 rounded-3xl p-8 shadow-2xl shadow-cyan-900/30 space-y-5 w-full">
+            <div class="bg-[#0d0e16] border border-slate-900 rounded-xl p-6 space-y-5">
               <div class="flex items-center gap-2 border-b border-slate-900 pb-3">
                 <i class="fa-solid fa-key text-yellow-400"></i>
                 <h2 class="text-md font-bold tracking-wide text-white">J1BTNL CONFIG SNI GENERATOR</h2>
