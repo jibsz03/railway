@@ -166,7 +166,6 @@ class GatewayServer {
     body {
       background: #0a0f0a;
     }
-    /* mobile first - simpel */
     .card {
       background: rgba(0, 20, 0, 0.85);
       backdrop-filter: blur(2px);
@@ -226,14 +225,14 @@ class GatewayServer {
 
   <main class="max-w-5xl mx-auto p-4 space-y-5 flex-grow">
 
-    <!-- STATS RINGKAS (2 baris di mobile) -->
+    <!-- STATS RINGKAS (2 baris di mobile) - menggunakan nilai statis + simulasi -->
     <div class="grid grid-cols-2 gap-3">
       <div class="card p-3 flex justify-between items-center">
         <div><p class="text-[11px] text-green-500">UPTIME</p><p id="uptime-val" class="text-lg font-bold text-white">0s</p></div>
         <i class="fa-regular fa-clock text-green-700 text-xl"></i>
       </div>
       <div class="card p-3 flex justify-between items-center">
-        <div><p class="text-[11px] text-green-500">RAM</p><p class="text-lg font-bold text-white">${Math.round(process.memoryUsage().heapUsed / 1024 / 1024)} MB</p></div>
+        <div><p class="text-[11px] text-green-500">RAM</p><p id="ram-val" class="text-lg font-bold text-white">128 MB</p></div>
         <i class="fa-solid fa-microchip text-green-700 text-xl"></i>
       </div>
       <div class="card p-3 flex justify-between items-center">
@@ -241,12 +240,12 @@ class GatewayServer {
         <i class="fa-solid fa-chart-line text-green-700 text-xl"></i>
       </div>
       <div class="card p-3 flex justify-between items-center">
-        <div><p class="text-[11px] text-green-500">NODE</p><p class="text-md font-bold text-green-300">${process.version}</p></div>
+        <div><p class="text-[11px] text-green-500">NODE</p><p class="text-md font-bold text-green-300">v20.11.0</p></div>
         <i class="fa-brands fa-node-js text-green-700 text-xl"></i>
       </div>
     </div>
 
-    <!-- VLESS / TROJAN GENERATOR (tetap fungsi, tampilan simpel) -->
+    <!-- VLESS / TROJAN GENERATOR (fungsi tetap, tampilan simpel) -->
     <div class="card p-4 space-y-4">
       <div class="flex items-center gap-2 border-b border-green-800/50 pb-2">
         <i class="fa-solid fa-key text-green-400"></i>
@@ -265,7 +264,7 @@ class GatewayServer {
         <!-- Host -->
         <div>
           <label class="text-[11px] text-green-400 font-semibold">Host / Domain</label>
-          <input id="hostInput" type="text" value="${currentHost}" class="w-full text-sm mt-1">
+          <input id="hostInput" type="text" value="localhost:3000" class="w-full text-sm mt-1">
         </div>
         <!-- Port -->
         <div>
@@ -358,12 +357,20 @@ class GatewayServer {
       });
     }
 
-    let start = ${Math.floor(process.uptime())};
+    // Uptime simulasi
+    let start = 0;
     setInterval(() => {
       start++;
       document.getElementById('uptime-val').innerText = start + 's';
     }, 1000);
 
+    // Simulasi RAM (random antara 80-256 MB)
+    setInterval(() => {
+      let ram = Math.floor(Math.random() * (256 - 80 + 1) + 80);
+      document.getElementById('ram-val').innerText = ram + ' MB';
+    }, 5000);
+
+    // Simulasi bandwidth
     let bandwidthMB = 0;
     setInterval(() => {
       bandwidthMB = Math.min(1536, bandwidthMB + Math.floor(Math.random() * 15));
@@ -394,7 +401,7 @@ class GatewayServer {
     function generateAccounts() {
       try {
         const uuid = document.getElementById('uuidInput').value.trim() || '853b8456-0c0b-4bfa-b3b4-b2619248a9bc';
-        const host = document.getElementById('hostInput').value.trim() || '${currentHost}';
+        const host = document.getElementById('hostInput').value.trim() || 'localhost:3000';
         const port = document.getElementById('portInput').value.trim() || '443';
         const path = document.getElementById('pathInput').value.trim() || '/ALL';
         const sni = document.getElementById('sniInput').value.trim() || 'business.whatsapp.com';
@@ -425,19 +432,33 @@ class GatewayServer {
     setTimeout(() => generateAccounts(), 200);
     setTimeout(() => {
       ['uuidInput','hostInput','portInput','pathInput','sniInput','remarkInput'].forEach(id => {
-        document.getElementById(id)?.addEventListener('input', generateAccounts);
+        const el = document.getElementById(id);
+        if (el) el.addEventListener('input', generateAccounts);
       });
-      document.getElementById('pathSelect')?.addEventListener('change', function() {
-        document.getElementById('pathInput').value = this.value;
-        generateAccounts();
-      });
-      document.getElementById('sniSelect')?.addEventListener('change', function() {
-        let sniInput = document.getElementById('sniInput');
-        if (this.value === 'custom') sniInput.value = '';
-        else { sniInput.value = this.value; generateAccounts(); }
-      });
-      document.getElementById('generateBtn')?.addEventListener('click', (e) => { e.preventDefault(); generateAccounts(); });
-      document.getElementById('randomUuidBtn')?.addEventListener('click', (e) => { e.preventDefault(); generateUUID(); });
+      const pathSelect = document.getElementById('pathSelect');
+      if (pathSelect) {
+        pathSelect.addEventListener('change', function() {
+          const pathInput = document.getElementById('pathInput');
+          if (pathInput) {
+            pathInput.value = this.value;
+            generateAccounts();
+          }
+        });
+      }
+      const sniSelect = document.getElementById('sniSelect');
+      if (sniSelect) {
+        sniSelect.addEventListener('change', function() {
+          const sniInput = document.getElementById('sniInput');
+          if (sniInput) {
+            if (this.value === 'custom') sniInput.value = '';
+            else { sniInput.value = this.value; generateAccounts(); }
+          }
+        });
+      }
+      const genBtn = document.getElementById('generateBtn');
+      if (genBtn) genBtn.addEventListener('click', (e) => { e.preventDefault(); generateAccounts(); });
+      const randBtn = document.getElementById('randomUuidBtn');
+      if (randBtn) randBtn.addEventListener('click', (e) => { e.preventDefault(); generateUUID(); });
     }, 400);
   </script>
 </body>
