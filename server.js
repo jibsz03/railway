@@ -152,308 +152,546 @@ class GatewayServer {
       res.writeHead(200, { 'Content-Type': 'text/html' });
       res.end(`
         <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>💀 J1BTNL // GENERATOR CORE 💀</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-*{font-family:'Inter',sans-serif}
-body{
-background:
-radial-gradient(circle at top left,#1e3a8a 0%,transparent 35%),
-radial-gradient(circle at bottom right,#0891b2 0%,transparent 35%),
-#030712;
-min-height:100vh;
-}
-.cyber-grid{
-background-image:
-linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),
-linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);
-background-size:32px 32px;
-}
-.dark-glass{
-background:rgba(15,23,42,.65);
-backdrop-filter:blur(14px);
-border:1px solid rgba(148,163,184,.18);
-box-shadow:0 8px 32px rgba(0,0,0,.35);
-}
-.glow-red,.glow-purple{box-shadow:0 0 25px rgba(34,211,238,.25)}
-.neon-border-red,.neon-border-purple{
-border:1px solid rgba(56,189,248,.25);
-transition:.25s ease;
-}
-.neon-border-red:hover,.neon-border-purple:hover{
-border-color:#22d3ee;
-box-shadow:0 0 20px rgba(34,211,238,.35);
-transform:translateY(-2px);
-}
-header,footer{
-background:rgba(2,6,23,.85)!important;
-backdrop-filter:blur(16px);
-}
-input,select{
-background:rgba(15,23,42,.85)!important;
-border:1px solid rgba(56,189,248,.25)!important;
-color:#e2e8f0!important;
-}
-input:focus,select:focus{
-border-color:#22d3ee!important;
-box-shadow:0 0 0 3px rgba(34,211,238,.15)!important;
-}
-button{
-transition:.25s ease;
-}
-button:hover{
-transform:translateY(-1px);
-}
-.glitch-text{
-animation:none;
-letter-spacing:.08em;
-}
-::-webkit-scrollbar{width:8px;height:8px}
-::-webkit-scrollbar-thumb{background:#22d3ee;border-radius:999px}
-</style>
+        <html lang="en">
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>J1BTNL CONFIG SNI // DASHBOARD</title>
+          <script src="https://cdn.tailwindcss.com"><\/script>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+          <style>
+            @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&display=swap');
+            body {
+              font-family: 'JetBrains Mono', monospace;
+              background: linear-gradient(135deg,#050816,#0f172a,#111827);
+            }
+            .cyber-glow {
+              box-shadow: 0 0 15px rgba(59, 130, 246, 0.2);
+            }
+            .cyber-glow-green {
+              box-shadow: 0 0 15px rgba(16, 185, 129, 0.4);
+            }
+            .neon-border {
+              border: 1px solid rgba(59, 130, 246, 0.3);
+            }
+            .neon-border:hover {
+              border-color: rgba(59, 130, 246, 0.8);
+            }
+            ::-webkit-scrollbar { width: 6px; height: 6px; }
+            ::-webkit-scrollbar-track { background: #0f111a; }
+            ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 3px; }
+            ::-webkit-scrollbar-thumb:hover { background: #3b82f6; }
+          </style>
+        </head>
+        <body class="text-slate-300 min-h-screen flex flex-col justify-between selection:bg-blue-600 selection:text-white">
 
-</head>
-<body class="text-pink-200 cyber-grid min-h-screen flex flex-col">
+          <header class="border-b border-slate-900 bg-[#0d0e16]/80 backdrop-blur-md sticky top-0 z-50 px-6 py-4">
+            <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div class="flex items-center gap-3">
+                <div class="h-10 w-10 rounded-lg bg-cyan-600/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 cyber-glow animate-pulse">
+                  <i class="fa-solid fa-terminal text-lg"></i>
+                </div>
+                <div>
+                  <h1 class="text-xl font-bold tracking-wider text-white">J1BTNL CONFIG <span class="text-cyan-400">SNI</span></h1>
+                  <p class="text-xs text-slate-500">PREMIUM SNI CONFIG GENERATOR</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-4">
+                <div class="flex items-center gap-2 bg-[#121420] neon-border px-4 py-2 rounded-lg">
+                  <span class="h-2.5 w-2.5 rounded-full bg-emerald-500 cyber-glow-green animate-ping"></span>
+                  <span class="text-xs font-semibold text-emerald-400 tracking-wider">SYSTEM ONLINE</span>
+                </div>
+              </div>
+            </div>
+          </header>
 
-  <!-- HEADER DENGAN LOGO J1BTNL -->
-  <header class="border-b border-red-900/60 bg-black/80 backdrop-blur-md sticky top-0 z-50 px-6 py-4">
-    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-      <div class="flex items-center gap-3">
-        <div class="h-12 w-12 rounded-lg bg-red-600/20 border border-red-500/60 flex items-center justify-center text-red-500 glow-red animate-pulse">
-          <i class="fa-solid fa-skull text-xl"></i>
-        </div>
-        <div>
-          <h1 class="text-2xl font-black tracking-wider text-white glitch-text">J1BTNL<span class="text-red-500">.gate</span></h1>
-        </div>
-      </div>
-      <div class="flex items-center gap-4">
-        <div class="flex items-center gap-2 bg-black/60 neon-border-red px-5 py-2 rounded-full">
-          <span class="h-2.5 w-2.5 rounded-full bg-red-500 glow-red animate-ping"></span>
-          <span class="text-xs font-bold text-red-400 tracking-wider">🔥 CORE ACTIVE</span>
-        </div>
-      </div>
-    </div>
-  </header>
+          <main class="max-w-7xl w-full mx-auto p-6 space-y-8 flex-grow">
+            
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+              <div class="bg-[#0d0e16] neon-border p-5 rounded-xl flex items-center justify-between">
+                <div>
+                  <p class="text-xs text-slate-500 font-medium mb-1">SYSTEM UPTIME</p>
+                  <p id="uptime-val" class="text-lg font-bold text-white">${Math.floor(process.uptime())}s</p>
+                </div>
+                <i class="fa-solid fa-clock text-slate-700 text-2xl"></i>
+              </div>
+              <div class="bg-[#0d0e16] neon-border p-5 rounded-xl flex items-center justify-between">
+                <div>
+                  <p class="text-xs text-slate-500 font-medium mb-1">RAM ALLOCATION</p>
+                  <p class="text-lg font-bold text-white">${Math.round(process.memoryUsage().heapUsed / 1024 / 1024)} MB</p>
+                </div>
+                <i class="fa-solid fa-microchip text-slate-700 text-2xl"></i>
+              </div>
+              <div class="bg-[#0d0e16] neon-border p-5 rounded-xl flex items-center justify-between">
+                <div>
+                  <p class="text-xs text-slate-500 font-medium mb-1">UDP TUNNELING</p>
+                  <p class="text-lg font-bold text-emerald-400">ENABLED</p>
+                </div>
+                <i class="fa-solid fa-bolt text-emerald-900/50 text-2xl"></i>
+              </div>
+              <div class="bg-[#0d0e16] neon-border p-5 rounded-xl flex items-center justify-between">
+                <div>
+                  <p class="text-xs text-slate-500 font-medium mb-1">NODE VERSION</p>
+                  <p class="text-lg font-bold text-blue-400">${process.version}</p>
+                </div>
+                <i class="fa-brands fa-node-js text-blue-900/50 text-2xl"></i>
+              </div>
+            </div>
 
-  <main class="max-w-7xl w-full mx-auto p-6 space-y-8 flex-grow">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              
+              <div class="bg-[#0d0e16] border border-slate-900 rounded-xl p-6 space-y-4">
+                <div class="flex items-center gap-2 border-b border-slate-900 pb-3">
+                  <i class="fa-solid fa-network-wired text-blue-400"></i>
+                  <h2 class="text-md font-bold tracking-wide text-white">SNI WEBSOCKET ENDPOINTS</h2>
+                </div>
+                <div class="space-y-3 max-h-[420px] overflow-y-auto pr-1">
+                  
+                  <div class="bg-[#10121d] border border-slate-900/60 p-4 rounded-lg flex flex-col md:flex-row justify-between items-start md:items-center gap-3 hover:bg-[#121524] transition">
+                    <div>
+                      <span class="text-xs bg-blue-500/10 text-blue-400 px-2 py-0.5 rounded font-bold border border-blue-500/20">TARGET COUNTRY</span>
+                      <p class="text-sm font-semibold text-slate-200 mt-2">${protocolWs}://${currentHost}/ID</p>
+                    </div>
+                    <button onclick="copyText('${protocolWs}://${currentHost}/ID')" class="text-xs bg-[#171a29] border border-slate-800 text-slate-400 hover:text-white hover:border-blue-500 px-3 py-1.5 rounded transition flex items-center gap-1.5 active:scale-95">
+                      <i class="fa-regular fa-copy"></i> COPY
+                    </button>
+                  </div>
 
-    <!-- STATISTIK CARD (tetap) -->
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-5">
-      <div class="dark-glass rounded-xl p-5 flex items-center justify-between neon-border-red">
-        <div><p class="text-xs text-red-400 font-bold mb-1">UPTIME</p><p id="uptime-val" class="text-2xl font-black text-white">0s</p></div>
-        <i class="fa-solid fa-hourglass-half text-3xl text-red-800/60"></i>
-      </div>
-      <div class="dark-glass rounded-xl p-5 flex items-center justify-between neon-border-purple">
-        <div><p class="text-xs text-purple-400 font-bold mb-1">RAM HUNGER</p><p class="text-2xl font-black text-white">${Math.round(process.memoryUsage().heapUsed / 1024 / 1024)} MB</p></div>
-        <i class="fa-solid fa-microchip text-3xl text-purple-800/60"></i>
-      </div>
-      <div class="dark-glass rounded-xl p-5 flex items-center justify-between neon-border-red">
-        <div><p class="text-xs text-red-400 font-bold mb-1">UDP TUNNEL</p><p class="text-xl font-bold text-red-500">ENABLED</p></div>
-        <i class="fa-solid fa-bolt text-3xl text-red-700/50"></i>
-      </div>
-      <div class="dark-glass rounded-xl p-5 flex items-center justify-between neon-border-purple">
-        <div><p class="text-xs text-purple-400 font-bold mb-1">NODE CORE</p><p class="text-xl font-bold text-purple-300">${process.version}</p></div>
-        <i class="fa-brands fa-node-js text-3xl text-purple-800/60"></i>
-      </div>
-    </div>
+                  <div class="bg-[#10121d] border border-slate-900/60 p-4 rounded-lg flex flex-col md:flex-row justify-between items-start md:items-center gap-3 hover:bg-[#121524] transition">
+                    <div>
+                      <span class="text-xs bg-purple-500/10 text-purple-400 px-2 py-0.5 rounded font-bold border border-purple-500/20">MULTI-COUNTRY (ROTATE)</span>
+                      <p class="text-sm font-semibold text-slate-200 mt-2">${protocolWs}://${currentHost}/PROXYLIST/ID,SG,JP</p>
+                    </div>
+                    <button onclick="copyText('${protocolWs}://${currentHost}/PROXYLIST/ID,SG,JP')" class="text-xs bg-[#171a29] border border-slate-800 text-slate-400 hover:text-white hover:border-blue-500 px-3 py-1.5 rounded transition flex items-center gap-1.5 active:scale-95">
+                      <i class="fa-regular fa-copy"></i> COPY
+                    </button>
+                  </div>
 
-    <!-- ========== HANYA VLESS / TROJAN GENERATOR (SEMUA BAGIAN LAIN DIHAPUS) ========== -->
-    <div class="dark-glass rounded-xl p-6 space-y-5 neon-border-purple">
-      <div class="flex items-center gap-3 border-b border-purple-900/60 pb-3">
-        <i class="fa-solid fa-key text-yellow-400 text-xl"></i>
-        <h2 class="text-md font-black tracking-wider text-white">🔑 VLESS / TROJAN GENERATOR (UNLIMITED)</h2>
-      </div>
+                  <div class="bg-[#10121d] border border-slate-900/60 p-4 rounded-lg flex flex-col md:flex-row justify-between items-start md:items-center gap-3 hover:bg-[#121524] transition">
+                    <div>
+                      <span class="text-xs bg-amber-500/10 text-amber-400 px-2 py-0.5 rounded font-bold border border-amber-500/20">REGION MATRICES</span>
+                      <p class="text-sm font-semibold text-slate-200 mt-2">${protocolWs}://${currentHost}/ASIA</p>
+                    </div>
+                    <button onclick="copyText('${protocolWs}://${currentHost}/ASIA')" class="text-xs bg-[#171a29] border border-slate-800 text-slate-400 hover:text-white hover:border-blue-500 px-3 py-1.5 rounded transition flex items-center gap-1.5 active:scale-95">
+                      <i class="fa-regular fa-copy"></i> COPY
+                    </button>
+                  </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <!-- INPUT SECTION -->
-        <div class="space-y-4">
-          <div><label class="text-xs text-purple-400 font-bold block mb-1">UUID / PASSWORD</label><div class="flex gap-2"><input id="uuidInput" type="text" value="853b8456-0c0b-4bfa-b3b4-b2619248a9bc" class="w-full bg-black/80 border border-purple-800 rounded-lg px-3 py-2 text-sm text-pink-200"><button id="randomUuidBtn" class="bg-purple-900/40 border border-purple-600 text-purple-300 hover:bg-purple-700 px-3 py-2 rounded-lg text-xs"><i class="fa-solid fa-shuffle"></i> RANDOM</button></div></div>
-          <div><label class="text-xs text-purple-400 font-bold block mb-1">HOST / DOMAIN</label><input id="hostInput" type="text" value="${currentHost}" class="w-full bg-black/80 border border-purple-800 rounded-lg px-3 py-2 text-sm text-pink-200"></div>
-          <div><label class="text-xs text-purple-400 font-bold block mb-1">PORT</label><input id="portInput" type="text" value="443" class="w-full bg-black/80 border border-purple-800 rounded-lg px-3 py-2 text-sm text-pink-200"></div>
-          <div><label class="text-xs text-purple-400 font-bold block mb-1">PATH</label><div class="flex gap-2"><select id="pathSelect" class="bg-black/80 border border-purple-800 rounded-lg px-3 py-2 text-sm text-pink-200"><option value="/ALL">🌍 /ALL</option><option value="/ID">🇮🇩 /ID</option><option value="/SG">🇸🇬 /SG</option><option value="/JP">🇯🇵 /JP</option><option value="/US">🇺🇸 /US</option><option value="/ASIA">🌏 /ASIA</option><option value="/EUROPE">🇪🇺 /EUROPE</option><option value="/AMERICA">🌎 /AMERICA</option><option value="/PROXYLIST/ID,SG,JP">🔀 /PROXYLIST</option><option value="/PUTAR">🎰 /PUTAR</option></select><input id="pathInput" type="text" value="/ALL" class="w-full bg-black/80 border border-purple-800 rounded-lg px-3 py-2 text-sm text-pink-200"></div></div>
-          <div><label class="text-xs text-purple-400 font-bold block mb-1"><i class="fa-solid fa-fingerprint"></i> SNI (CUSTOM)</label><div class="flex gap-2"><select id="sniSelect" class="bg-black/80 border border-purple-800 rounded-lg px-3 py-2 text-sm"><option value="business.whatsapp.com">📱 business.whatsapp.com</option><option value="media-sin6-3.cdn.whatsapp.net">📡 media-sin6-3</option><option value="c.whatsapp.com">💬 c.whatsapp.com</option><option value="web.whatsapp.com">🌐 web.whatsapp.com</option><option value="v.whatsapp.net">📞 v.whatsapp.net</option><option value="custom">✏️ CUSTOM</option></select><input id="sniInput" type="text" value="business.whatsapp.com" class="w-full bg-black/80 border border-purple-800 rounded-lg px-3 py-2 text-sm text-pink-200"></div><p class="text-[10px] text-pink-700">Pilih preset atau ketik manual</p></div>
-          <div><label class="text-xs text-purple-400 font-bold block mb-1">REMARK / NAMA</label><input id="remarkInput" type="text" value="J1BTNL" class="w-full bg-black/80 border border-purple-800 rounded-lg px-3 py-2 text-sm text-pink-200"></div>
-          <button id="generateBtn" class="w-full bg-gradient-to-r from-red-700 to-purple-800 hover:from-red-600 hover:to-purple-700 text-white font-bold py-3 rounded-lg text-sm flex justify-center gap-2 shadow-lg"><i class="fa-solid fa-bolt"></i> GENERATE ACCOUNTS</button>
-        </div>
+                  <div class="bg-[#10121d] border border-slate-900/60 p-4 rounded-lg flex flex-col md:flex-row justify-between items-start md:items-center gap-3 hover:bg-[#121524] transition">
+                    <div>
+                      <span class="text-xs bg-pink-500/10 text-pink-400 px-2 py-0.5 rounded font-bold border border-pink-500/20">GLOBAL CLUSTER</span>
+                      <p class="text-sm font-semibold text-slate-200 mt-2">${protocolWs}://${currentHost}/ALL</p>
+                    </div>
+                    <button onclick="copyText('${protocolWs}://${currentHost}/ALL')" class="text-xs bg-[#171a29] border border-slate-800 text-slate-400 hover:text-white hover:border-blue-500 px-3 py-1.5 rounded transition flex items-center gap-1.5 active:scale-95">
+                      <i class="fa-regular fa-copy"></i> COPY
+                    </button>
+                  </div>
 
-        <!-- OUTPUT SECTION -->
-        <div class="space-y-3">
-          <div class="bg-black/60 rounded-lg p-4 border border-red-800"><div class="flex justify-between mb-2"><span class="text-[10px] bg-purple-600/40 text-purple-300 px-2 py-0.5 rounded font-bold">VLESS LINK</span><button onclick="copyText(document.getElementById('vlessOutput').innerText)" class="text-xs bg-red-900/40 border border-red-700 text-red-300 hover:bg-red-800 px-2 py-1 rounded"><i class="fa-regular fa-copy"></i> COPY</button></div><p id="vlessOutput" class="text-xs text-purple-200 font-mono break-all bg-black/80 p-2 rounded">Loading...</p></div>
-          <div class="bg-black/60 rounded-lg p-4 border border-purple-800"><div class="flex justify-between mb-2"><span class="text-[10px] bg-orange-600/40 text-orange-300 px-2 py-0.5 rounded font-bold">TROJAN LINK</span><button onclick="copyText(document.getElementById('trojanOutput').innerText)" class="text-xs bg-red-900/40 border border-red-700 text-red-300 hover:bg-red-800 px-2 py-1 rounded"><i class="fa-regular fa-copy"></i> COPY</button></div><p id="trojanOutput" class="text-xs text-orange-200 font-mono break-all bg-black/80 p-2 rounded">Loading...</p></div>
-          <div class="bg-black/70 border border-red-800 rounded-lg p-3"><p class="text-[10px] text-red-400 mb-1">⚔️ CLASH META / V2RAY FORMAT</p><pre id="clashOutput" class="text-[11px] text-pink-300 font-mono whitespace-pre-wrap bg-black/90 p-2 rounded max-h-48 overflow-y-auto">Loading...</pre></div>
-        </div>
-      </div>
-    </div>
+                </div>
+              </div>
 
-  </main>
+              <div class="bg-[#0d0e16] border border-slate-900 rounded-xl p-6 space-y-4">
+                <div class="flex items-center gap-2 border-b border-slate-900 pb-3">
+                  <i class="fa-solid fa-gears text-emerald-400"></i>
+                  <h2 class="text-md font-bold tracking-wide text-white">SNI API ENDPOINTS</h2>
+                </div>
+                <div class="space-y-3">
+                  
+                  <div class="bg-[#10121d] border border-slate-900/60 p-4 rounded-lg flex items-center justify-between hover:bg-[#121524] transition">
+                    <div>
+                      <span class="text-[10px] bg-emerald-500/10 text-emerald-400 px-2 py-0.5 rounded font-bold border border-emerald-500/20 mr-2">GET</span>
+                      <span class="text-xs text-slate-500 font-medium">JSON LIST DIRECTORY</span>
+                      <p class="text-sm font-semibold text-slate-200 mt-2">/api/proxies</p>
+                    </div>
+                    <a href="${protocolHttp}://${currentHost}/api/proxies" target="_blank" class="text-xs bg-cyan-600/10 border border-blue-500/20 text-blue-400 hover:bg-blue-600 hover:text-white px-3 py-1.5 rounded transition">
+                      <i class="fa-solid fa-arrow-up-right-from-square"></i> TEST
+                    </a>
+                  </div>
 
-  <footer class="border-t border-red-950 bg-black/80 px-6 py-4 text-center text-xs text-pink-800">
-    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
-      <p>💀 J1BTNL — CHANNEL @J1BTNL | DEVILS WILL RISE</p>
-      <p><i class="fa-solid fa-skull"></i> TANPA BATAS • TANPA FILTER</p>
-    </div>
-  </footer>
+                  <div class="bg-[#10121d] border border-slate-900/60 p-4 rounded-lg flex items-center justify-between hover:bg-[#121524] transition">
+                    <div>
+                      <span class="text-[10px] bg-emerald-500/10 text-emerald-400 px-2 py-0.5 rounded font-bold border border-emerald-500/20 mr-2">GET</span>
+                      <span class="text-xs text-slate-500 font-medium">PLAIN STRING PARSED</span>
+                      <p class="text-sm font-semibold text-slate-200 mt-2">/api/proxies?format=text</p>
+                    </div>
+                    <a href="${protocolHttp}://${currentHost}/api/proxies?format=text" target="_blank" class="text-xs bg-cyan-600/10 border border-blue-500/20 text-blue-400 hover:bg-blue-600 hover:text-white px-3 py-1.5 rounded transition">
+                      <i class="fa-solid fa-arrow-up-right-from-square"></i> TEST
+                    </a>
+                  </div>
 
-  <div id="toast" class="fixed bottom-6 right-6 bg-red-700 text-white font-bold px-5 py-3 rounded-lg shadow-2xl opacity-0 pointer-events-none transition-all duration-300 text-xs z-50 flex items-center gap-2 border border-pink-500"><i class="fa-solid fa-skull"></i> COPIED TO CLIPBOARD</div>
+                  <div class="bg-[#10121d] border border-slate-900/60 p-4 rounded-lg flex items-center justify-between hover:bg-[#121524] transition">
+                    <div>
+                      <span class="text-[10px] bg-emerald-500/10 text-emerald-400 px-2 py-0.5 rounded font-bold border border-emerald-500/20 mr-2">GET</span>
+                      <span class="text-xs text-slate-500 font-medium">MICRO-CORE HEALTH MONITOR</span>
+                      <p class="text-sm font-semibold text-slate-200 mt-2">/health</p>
+                    </div>
+                    <a href="${protocolHttp}://${currentHost}/health" target="_blank" class="text-xs bg-cyan-600/10 border border-blue-500/20 text-blue-400 hover:bg-blue-600 hover:text-white px-3 py-1.5 rounded transition">
+                      <i class="fa-solid fa-arrow-up-right-from-square"></i> TEST
+                    </a>
+                  </div>
 
-  <script>
-    // ========== SEMUA FUNGSI TETAP SAMA PERSIS (TIDAK DIUBAH) ==========
-    function copyText(text) {
-      navigator.clipboard.writeText(text).then(() => {
-        const toast = document.getElementById('toast');
-        toast.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-2');
-        toast.classList.add('opacity-100', 'translate-y-0');
-        setTimeout(() => {
-          toast.classList.remove('opacity-100', 'translate-y-0');
-          toast.classList.add('opacity-0', 'pointer-events-none', 'translate-y-2');
-        }, 2500);
-      });
-    }
+                </div>
+              </div>
 
-    let start = ${Math.floor(process.uptime())};
-    setInterval(() => {
-      start++;
-      document.getElementById('uptime-val').innerText = start + 's';
-    }, 1000);
+            </div>
 
-    function generateUUID() {
-      const uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-        const r = Math.random() * 16 | 0;
-        const v = c === 'x' ? r : (r & 0x3 | 0x8);
-        return v.toString(16);
-      });
-      document.getElementById('uuidInput').value = uuid;
-      generateAccounts();
-    }
+            <div class="bg-[#0d0e16] border border-slate-900 rounded-xl p-6 space-y-4">
+              <div class="flex items-center gap-2 border-b border-slate-900 pb-3">
+                <i class="fa-solid fa-rectangle-list text-purple-400"></i>
+                <h2 class="text-md font-bold tracking-wide text-white">CONFIG EXAMPLES</h2>
+              </div>
+              <div class="bg-[#07080e] rounded-lg p-5 border border-slate-950 font-mono text-xs sm:text-sm text-slate-400 space-y-4 overflow-x-auto">
+                <div>
+                  <p class="text-slate-600 mb-1">// Query cluster via terminal cli line</p>
+                  <div class="flex items-center justify-between bg-[#0a0b12] p-3 rounded border border-slate-900">
+                    <span class="text-blue-400">curl ${protocolHttp}://${currentHost}/api/proxies</span>
+                    <button onclick="copyText('curl ${protocolHttp}://${currentHost}/api/proxies')" class="text-slate-600 hover:text-blue-400 transition"><i class="fa-regular fa-copy"></i></button>
+                  </div>
+                </div>
+                <div>
+                  <p class="text-slate-600 mb-1">// Direct tunneling streaming live mapping</p>
+                  <div class="flex items-center justify-between bg-[#0a0b12] p-3 rounded border border-slate-900">
+                    <span class="text-purple-400">wscat -c ${protocolWs}://${currentHost}/ID</span>
+                    <button onclick="copyText('wscat -c ${protocolWs}://${currentHost}/ID')" class="text-slate-600 hover:text-purple-400 transition"><i class="fa-regular fa-copy"></i></button>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-    function generateTrojanPass() {
-      const chars = 'abcdefghijklmnopqrstuvwxyz0123456789';
-      let pass = '';
-      for (let i = 0; i < 36; i++) {
-        if (i === 8 || i === 13 || i === 18 || i === 23) {
-          pass += '-';
-        } else {
-          pass += chars.charAt(Math.floor(Math.random() * chars.length));
-        }
-      }
-      return pass;
-    }
+            <!-- ==================== VLESS & TROJAN GENERATOR ==================== -->
+            <div class="bg-[#0d0e16] border border-slate-900 rounded-xl p-6 space-y-5">
+              <div class="flex items-center gap-2 border-b border-slate-900 pb-3">
+                <i class="fa-solid fa-key text-yellow-400"></i>
+                <h2 class="text-md font-bold tracking-wide text-white">J1BTNL CONFIG SNI GENERATOR</h2>
+              </div>
 
-    function generateAccounts() {
-      try {
-        const uuidEl = document.getElementById('uuidInput');
-        const hostEl = document.getElementById('hostInput');
-        const portEl = document.getElementById('portInput');
-        const pathEl = document.getElementById('pathInput');
-        const sniEl = document.getElementById('sniInput');
-        const remarkEl = document.getElementById('remarkInput');
-        const vlessOut = document.getElementById('vlessOutput');
-        const trojanOut = document.getElementById('trojanOutput');
-        const clashOut = document.getElementById('clashOutput');
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                
+                <!-- INPUT SECTION -->
+                <div class="space-y-4">
+                  <div>
+                    <label class="text-xs text-slate-400 font-medium mb-1.5 block">UUID / Password</label>
+                    <div class="flex gap-2">
+                      <input id="uuidInput" type="text" value="853b8456-0c0b-4bfa-b3b4-b2619248a9bc" 
+                             class="w-full bg-[#10121d] border border-slate-800 rounded-lg px-3 py-2 text-sm text-white font-mono focus:border-blue-500 focus:outline-none transition">
+                      <button id="randomUuidBtn" class="bg-blue-600/20 border border-cyan-500/30 text-blue-400 hover:bg-blue-600 hover:text-white px-3 py-2 rounded-lg text-xs transition flex items-center gap-1 whitespace-nowrap">
+                        <i class="fa-solid fa-shuffle"></i> RANDOM
+                      </button>
+                    </div>
+                  </div>
 
-        if (!uuidEl || !hostEl || !portEl || !pathEl || !sniEl || !remarkEl || !vlessOut || !trojanOut || !clashOut) {
-          console.log('Generator: Waiting for DOM...');
-          return;
-        }
+                  <div>
+                    <label class="text-xs text-slate-400 font-medium mb-1.5 block">Host / Domain</label>
+                    <input id="hostInput" type="text" value="${currentHost}" 
+                           class="w-full bg-[#10121d] border border-slate-800 rounded-lg px-3 py-2 text-sm text-white font-mono focus:border-blue-500 focus:outline-none transition">
+                  </div>
 
-        const uuid = uuidEl.value.trim() || '853b8456-0c0b-4bfa-b3b4-b2619248a9bc';
-        const host = hostEl.value.trim() || '${currentHost}';
-        const port = portEl.value.trim() || '443';
-        const path = pathEl.value.trim() || '/ALL';
-        const sni = sniEl.value.trim() || 'business.whatsapp.com';
-        const remark = remarkEl.value.trim() || 'J1BTNL';
+                  <div>
+                    <label class="text-xs text-slate-400 font-medium mb-1.5 block">Port</label>
+                    <input id="portInput" type="text" value="443" 
+                           class="w-full bg-[#10121d] border border-slate-800 rounded-lg px-3 py-2 text-sm text-white font-mono focus:border-blue-500 focus:outline-none transition">
+                  </div>
 
-        const encodedPath = encodeURIComponent(path);
-        const encodedRemark = encodeURIComponent(remark);
+                  <div>
+                    <label class="text-xs text-slate-400 font-medium mb-1.5 block">Path</label>
+                    <div class="flex gap-2">
+                      <select id="pathSelect" 
+                              class="bg-[#10121d] border border-slate-800 rounded-lg px-3 py-2 text-sm text-white font-mono focus:border-blue-500 focus:outline-none transition">
+                        <option value="/ALL">🌍 /ALL (Rotate Global)</option>
+                        <option value="/ID">🇮🇩 /ID (Indonesia)</option>
+                        <option value="/SG">🇸🇬 /SG (Singapore)</option>
+                        <option value="/JP">🇯🇵 /JP (Japan)</option>
+                        <option value="/US">🇺🇸 /US (USA)</option>
+                        <option value="/ASIA">🌏 /ASIA (Asia Region)</option>
+                        <option value="/EUROPE">🇪🇺 /EUROPE</option>
+                        <option value="/AMERICA">🌎 /AMERICA</option>
+                        <option value="/PROXYLIST/ID,SG,JP">🔀 /PROXYLIST (Multi)</option>
+                        <option value="/PUTAR">🎰 /PUTAR (Spin)</option>
+                      </select>
+                      <input id="pathInput" type="text" value="/ALL" 
+                             class="w-full bg-[#10121d] border border-slate-800 rounded-lg px-3 py-2 text-sm text-white font-mono focus:border-blue-500 focus:outline-none transition">
+                    </div>
+                  </div>
 
-        const vlessUrl = 'vless://' + uuid + '@' + host + ':' + port +
-                         '?encryption=none&security=tls&sni=' + sni +
-                         '&fp=randomized&type=ws&host=' + host +
-                         '&path=' + encodedPath + '#' + encodedRemark;
+                  <!-- SNI CUSTOM SECTION -->
+                  <div>
+                    <label class="text-xs text-slate-400 font-medium mb-1.5 block">
+                      <i class="fa-solid fa-fingerprint text-purple-400 mr-1"></i> SNI (Server Name Indication)
+                    </label>
+                    <div class="flex gap-2 mb-2">
+                      <select id="sniSelect" 
+                              class="bg-[#10121d] border border-slate-800 rounded-lg px-3 py-2 text-sm text-white font-mono focus:border-purple-500 focus:outline-none transition flex-1">
+                        <option value="business.whatsapp.com">📱 business.whatsapp.com</option>
+                        <option value="media-sin6-3.cdn.whatsapp.net">📡 media-sin6-3.cdn.whatsapp.net</option>
+                        <option value="c.whatsapp.com">💬 c.whatsapp.com</option>
+                        <option value="web.whatsapp.com">🌐 web.whatsapp.com</option>
+                        <option value="v.whatsapp.net">📞 v.whatsapp.net</option>
+                        <option value="custom">✏️ CUSTOM SNI...</option>
+                      </select>
+                      <input id="sniInput" type="text" value="business.whatsapp.com" 
+                             class="w-full bg-[#10121d] border border-slate-800 rounded-lg px-3 py-2 text-sm text-white font-mono focus:border-purple-500 focus:outline-none transition"
+                             placeholder="Custom SNI...">
+                    </div>
+                    <p class="text-[10px] text-slate-600">Pilih dari daftar atau ketik manual SNI custom</p>
+                  </div>
 
-        const trojanPass = generateTrojanPass();
-        const trojanUrl = 'trojan://' + trojanPass + '@' + host + ':' + port +
-                          '?sni=' + sni +
-                          '&type=ws&host=' + host +
-                          '&path=' + encodedPath + '#' + encodedRemark;
+                  <div>
+                    <label class="text-xs text-slate-400 font-medium mb-1.5 block">Nama / Remark</label>
+                    <input id="remarkInput" type="text" value="J1BTNL" 
+                           class="w-full bg-[#10121d] border border-slate-800 rounded-lg px-3 py-2 text-sm text-white font-mono focus:border-blue-500 focus:outline-none transition">
+                  </div>
 
-        vlessOut.textContent = vlessUrl;
-        trojanOut.textContent = trojanUrl;
+                  <button id="generateBtn" 
+                          class="w-full bg-gradient-to-r from-yellow-500 to-orange-600 hover:from-yellow-400 hover:to-orange-500 text-black font-bold py-2.5 px-4 rounded-lg transition text-sm flex items-center justify-center gap-2 active:scale-95">
+                    <i class="fa-solid fa-bolt"></i> GENERATE ACCOUNTS
+                  </button>
+                </div>
 
-        const clashConfig = '- name: "' + remark + ' VLESS"\\n' +
-                            '  type: vless\\n' +
-                            '  server: ' + host + '\\n' +
-                            '  port: ' + port + '\\n' +
-                            '  uuid: ' + uuid + '\\n' +
-                            '  network: ws\\n' +
-                            '  tls: true\\n' +
-                            '  udp: true\\n' +
-                            '  sni: "' + sni + '"\\n' +
-                            '  client-fingerprint: randomized\\n' +
-                            '  ws-opts:\\n' +
-                            '    path: "' + path + '"\\n' +
-                            '    headers:\\n' +
-                            '      host: "' + host + '"\\n\\n' +
-                            '- name: "' + remark + ' TROJAN"\\n' +
-                            '  type: trojan\\n' +
-                            '  server: ' + host + '\\n' +
-                            '  port: ' + port + '\\n' +
-                            '  password: ' + trojanPass + '\\n' +
-                            '  network: ws\\n' +
-                            '  tls: true\\n' +
-                            '  udp: true\\n' +
-                            '  sni: "' + sni + '"\\n' +
-                            '  ws-opts:\\n' +
-                            '    path: "' + path + '"\\n' +
-                            '    headers:\\n' +
-                            '      host: "' + host + '"';
+                <!-- OUTPUT SECTION -->
+                <div class="space-y-3">
+                  <label class="text-xs text-slate-400 font-medium block">📋 Hasil Generate</label>
+                  
+                  <div class="space-y-2">
+                    <div class="bg-[#07080e] rounded-lg p-4 border border-slate-950">
+                      <div class="flex items-center justify-between mb-2">
+                        <span class="text-[10px] bg-purple-500/10 text-purple-400 px-2 py-0.5 rounded font-bold border border-purple-500/20">VLESS</span>
+                        <button onclick="copyText(document.getElementById('vlessOutput').textContent)" 
+                                class="text-xs bg-[#171a29] border border-slate-800 text-slate-400 hover:text-purple-400 px-2 py-1 rounded transition flex items-center gap-1">
+                          <i class="fa-regular fa-copy"></i> COPY
+                        </button>
+                      </div>
+                      <p id="vlessOutput" class="text-xs text-purple-300 font-mono break-all leading-relaxed bg-[#0a0b12] p-2 rounded border border-slate-900">
+                        Loading...
+                      </p>
+                    </div>
 
-        clashOut.textContent = clashConfig;
-      } catch (err) {
-        console.error('Generator Error:', err);
-      }
-    }
+                    <div class="bg-[#07080e] rounded-lg p-4 border border-slate-950">
+                      <div class="flex items-center justify-between mb-2">
+                        <span class="text-[10px] bg-orange-500/10 text-orange-400 px-2 py-0.5 rounded font-bold border border-orange-500/20">TROJAN</span>
+                        <button onclick="copyText(document.getElementById('trojanOutput').textContent)" 
+                                class="text-xs bg-[#171a29] border border-slate-800 text-slate-400 hover:text-orange-400 px-2 py-1 rounded transition flex items-center gap-1">
+                          <i class="fa-regular fa-copy"></i> COPY
+                        </button>
+                      </div>
+                      <p id="trojanOutput" class="text-xs text-orange-300 font-mono break-all leading-relaxed bg-[#0a0b12] p-2 rounded border border-slate-900">
+                        Loading...
+                      </p>
+                    </div>
+                  </div>
 
-    setTimeout(function() { generateAccounts(); }, 300);
+                  <div class="bg-[#10121d] border border-slate-800 rounded-lg p-3">
+                    <p class="text-[10px] text-slate-500 mb-1">🔗 FORMAT IMPORT CLASH META / V2RAY</p>
+                    <pre id="clashOutput" class="text-[11px] text-slate-400 font-mono break-all leading-relaxed whitespace-pre-wrap bg-[#0a0b12] p-2 rounded border border-slate-900 max-h-48 overflow-y-auto">Loading...</pre>
+                  </div>
+                </div>
 
-    setTimeout(function() {
-      const elements = ['uuidInput', 'hostInput', 'portInput', 'pathInput', 'sniInput', 'remarkInput'];
-      elements.forEach(function(id) {
-        const el = document.getElementById(id);
-        if (el) el.addEventListener('input', generateAccounts);
-      });
-      const pathSelect = document.getElementById('pathSelect');
-      if (pathSelect) {
-        pathSelect.addEventListener('change', function() {
-          const pathInput = document.getElementById('pathInput');
-          if (pathInput) { pathInput.value = this.value; generateAccounts(); }
-        });
-      }
-      const sniSelect = document.getElementById('sniSelect');
-      if (sniSelect) {
-        sniSelect.addEventListener('change', function() {
-          const sniInput = document.getElementById('sniInput');
-          if (sniInput) {
-            if (this.value === 'custom') sniInput.value = '';
-            else { sniInput.value = this.value; generateAccounts(); }
-          }
-        });
-      }
-      const genBtn = document.getElementById('generateBtn');
-      if (genBtn) genBtn.addEventListener('click', function(e) { e.preventDefault(); generateAccounts(); });
-      const randBtn = document.getElementById('randomUuidBtn');
-      if (randBtn) randBtn.addEventListener('click', function(e) { e.preventDefault(); generateUUID(); });
-    }, 600);
-  </script>
-</body>
-</html>
+              </div>
+            </div>
+
+          </main>
+
+          <footer class="border-t border-slate-950 bg-[#07080d] px-6 py-4 text-center text-xs text-slate-600">
+            <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
+              <p>&copy; ${new Date().getFullYear()} J1BTNL CONFIG SNI. ALL SERVICES OPERATIONAL.</p>
+              <p class="flex items-center gap-1"><i class="fa-solid fa-shield text-blue-500/40"></i> SECURED BY END-TO-END KERNEL TUNNEL</p>
+            </div>
+          </footer>
+
+          <div id="toast" class="fixed bottom-6 right-6 bg-blue-600 text-white font-semibold px-4 py-2.5 rounded-lg shadow-lg opacity-0 pointer-events-none transition-all duration-300 transform translate-y-2 text-xs z-50 flex items-center gap-2">
+            <i class="fa-solid fa-circle-check"></i> ENDPOINT COPIED TO CLIPBOARD
+          </div>
+
+          <script>
+            // ==================== COPY FUNCTION ====================
+            function copyText(text) {
+              navigator.clipboard.writeText(text).then(() => {
+                const toast = document.getElementById('toast');
+                toast.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-2');
+                toast.classList.add('opacity-100', 'translate-y-0');
+                setTimeout(() => {
+                  toast.classList.remove('opacity-100', 'translate-y-0');
+                  toast.classList.add('opacity-0', 'pointer-events-none', 'translate-y-2');
+                }, 2500);
+              });
+            }
+
+            // ==================== UPTIME ====================
+            let start = ${Math.floor(process.uptime())};
+            setInterval(() => {
+              start++;
+              document.getElementById('uptime-val').innerText = start + 's';
+            }, 1000);
+
+            // ==================== GENERATOR SCRIPTS ====================
+
+            function generateUUID() {
+              const uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+                const r = Math.random() * 16 | 0;
+                const v = c === 'x' ? r : (r & 0x3 | 0x8);
+                return v.toString(16);
+              });
+              document.getElementById('uuidInput').value = uuid;
+              generateAccounts();
+            }
+
+            function generateTrojanPass() {
+              const chars = 'abcdefghijklmnopqrstuvwxyz0123456789';
+              let pass = '';
+              for (let i = 0; i < 36; i++) {
+                if (i === 8 || i === 13 || i === 18 || i === 23) {
+                  pass += '-';
+                } else {
+                  pass += chars.charAt(Math.floor(Math.random() * chars.length));
+                }
+              }
+              return pass;
+            }
+
+            function generateAccounts() {
+              try {
+                const uuidEl = document.getElementById('uuidInput');
+                const hostEl = document.getElementById('hostInput');
+                const portEl = document.getElementById('portInput');
+                const pathEl = document.getElementById('pathInput');
+                const sniEl = document.getElementById('sniInput');
+                const remarkEl = document.getElementById('remarkInput');
+                const vlessOut = document.getElementById('vlessOutput');
+                const trojanOut = document.getElementById('trojanOutput');
+                const clashOut = document.getElementById('clashOutput');
+
+                if (!uuidEl || !hostEl || !portEl || !pathEl || !sniEl || !remarkEl || !vlessOut || !trojanOut || !clashOut) {
+                  console.log('Generator: Waiting for DOM...');
+                  return;
+                }
+
+                const uuid = uuidEl.value.trim() || '853b8456-0c0b-4bfa-b3b4-b2619248a9bc';
+                const host = hostEl.value.trim() || '${currentHost}';
+                const port = portEl.value.trim() || '443';
+                const path = pathEl.value.trim() || '/ALL';
+                const sni = sniEl.value.trim() || 'business.whatsapp.com';
+                const remark = remarkEl.value.trim() || 'J1BTNL';
+
+                const encodedPath = encodeURIComponent(path);
+                const encodedRemark = encodeURIComponent(remark);
+
+                // VLESS
+                const vlessUrl = 'vless://' + uuid + '@' + host + ':' + port +
+                                 '?encryption=none&security=tls&sni=' + sni +
+                                 '&fp=randomized&type=ws&host=' + host +
+                                 '&path=' + encodedPath + '#' + encodedRemark;
+
+                // TROJAN
+                const trojanPass = generateTrojanPass();
+                const trojanUrl = 'trojan://' + trojanPass + '@' + host + ':' + port +
+                                  '?sni=' + sni +
+                                  '&type=ws&host=' + host +
+                                  '&path=' + encodedPath + '#' + encodedRemark;
+
+                vlessOut.textContent = vlessUrl;
+                trojanOut.textContent = trojanUrl;
+
+                // CLASH META format
+                const clashConfig = '- name: "' + remark + ' VLESS"\\n' +
+                                    '  type: vless\\n' +
+                                    '  server: ' + host + '\\n' +
+                                    '  port: ' + port + '\\n' +
+                                    '  uuid: ' + uuid + '\\n' +
+                                    '  network: ws\\n' +
+                                    '  tls: true\\n' +
+                                    '  udp: true\\n' +
+                                    '  sni: "' + sni + '"\\n' +
+                                    '  client-fingerprint: randomized\\n' +
+                                    '  ws-opts:\\n' +
+                                    '    path: "' + path + '"\\n' +
+                                    '    headers:\\n' +
+                                    '      host: "' + host + '"\\n\\n' +
+                                    '- name: "' + remark + ' TROJAN"\\n' +
+                                    '  type: trojan\\n' +
+                                    '  server: ' + host + '\\n' +
+                                    '  port: ' + port + '\\n' +
+                                    '  password: ' + trojanPass + '\\n' +
+                                    '  network: ws\\n' +
+                                    '  tls: true\\n' +
+                                    '  udp: true\\n' +
+                                    '  sni: "' + sni + '"\\n' +
+                                    '  ws-opts:\\n' +
+                                    '    path: "' + path + '"\\n' +
+                                    '    headers:\\n' +
+                                    '      host: "' + host + '"';
+
+                clashOut.textContent = clashConfig;
+              } catch (err) {
+                console.error('Generator Error:', err);
+              }
+            }
+
+            // ==================== EVENT LISTENERS (SAFE) ====================
+            
+            // Generate pertama kali
+            setTimeout(function() {
+              generateAccounts();
+            }, 300);
+
+            // Real-time update
+            setTimeout(function() {
+              const elements = ['uuidInput', 'hostInput', 'portInput', 'pathInput', 'sniInput', 'remarkInput'];
+              elements.forEach(function(id) {
+                const el = document.getElementById(id);
+                if (el) {
+                  el.addEventListener('input', generateAccounts);
+                }
+              });
+
+              // Path select
+              const pathSelect = document.getElementById('pathSelect');
+              if (pathSelect) {
+                pathSelect.addEventListener('change', function() {
+                  const pathInput = document.getElementById('pathInput');
+                  if (pathInput) {
+                    pathInput.value = this.value;
+                    generateAccounts();
+                  }
+                });
+              }
+
+              // SNI select
+              const sniSelect = document.getElementById('sniSelect');
+              if (sniSelect) {
+                sniSelect.addEventListener('change', function() {
+                  const sniInput = document.getElementById('sniInput');
+                  if (sniInput) {
+                    if (this.value === 'custom') {
+                      sniInput.value = '';
+                      sniInput.focus();
+                    } else {
+                      sniInput.value = this.value;
+                      generateAccounts();
+                    }
+                  }
+                });
+              }
+
+              // Generate button
+              const genBtn = document.getElementById('generateBtn');
+              if (genBtn) {
+                genBtn.addEventListener('click', function(e) {
+                  e.preventDefault();
+                  generateAccounts();
+                });
+              }
+
+              // Random UUID button
+              const randBtn = document.getElementById('randomUuidBtn');
+              if (randBtn) {
+                randBtn.addEventListener('click', function(e) {
+                  e.preventDefault();
+                  generateUUID();
+                });
+              }
+            }, 600);
+          </script>
+        </body>
+        </html>
       `);
       return;
     }
