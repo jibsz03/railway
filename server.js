@@ -294,21 +294,23 @@ class GatewayServer {
             <label class="text-xs text-slate-400 font-medium mb-1.5 block">
               <i class="fa-solid fa-fingerprint text-teal-400 mr-1"></i> SNI (Server Name Indication)
             </label>
-            <div class="flex gap-2 mb-2">
+            <div class="space-y-2 mb-2">
               <select id="sniSelect" 
-                      class="bg-[#0c130e] border border-emerald-900/50 rounded-lg px-3 py-2 text-sm text-white font-mono focus:border-teal-500 focus:outline-none transition flex-1">
+                      class="w-full bg-[#0c130e] border border-emerald-900/50 rounded-lg px-3 py-2 text-sm text-white font-mono focus:border-teal-500 focus:outline-none transition">
                 <option value="business.whatsapp.com">📱 business.whatsapp.com</option>
                 <option value="media-sin6-3.cdn.whatsapp.net">📡 media-sin6-3.cdn.whatsapp.net</option>
                 <option value="c.whatsapp.com">💬 c.whatsapp.com</option>
                 <option value="web.whatsapp.com">🌐 web.whatsapp.com</option>
                 <option value="v.whatsapp.net">📞 v.whatsapp.net</option>
-                <option value="live.iflix.com">🎬 live.iflix.com</option> <option value="custom">✏️ CUSTOM SNI...</option>
+                <option value="live.iflix.com">🎬 live.iflix.com</option>
+                <option value="custom">✏️ CUSTOM SNI...</option>
               </select>
+              
               <input id="sniInput" type="text" value="business.whatsapp.com" 
-                     class="w-full bg-[#0c130e] border border-emerald-900/50 rounded-lg px-3 py-2 text-sm text-white font-mono focus:border-teal-500 focus:outline-none transition"
-                     placeholder="Custom SNI...">
+                     class="hidden w-full bg-[#0c130e] border border-teal-600/50 rounded-lg px-3 py-2 text-sm text-white font-mono focus:border-teal-500 focus:outline-none transition"
+                     placeholder="Ketik SNI Custom Anda di sini...">
             </div>
-            <p class="text-[10px] text-slate-600">Pilih dari daftar atau ketik manual SNI custom</p>
+            <p class="text-[10px] text-slate-600">Pilih dari daftar atau pilih 'CUSTOM SNI' untuk mengetik manual.</p>
           </div>
 
           <div>
@@ -530,15 +532,18 @@ class GatewayServer {
         });
       }
 
+      // LOGIKAL KONDISIONAL SHOW/HIDE SNI INPUT
       const sniSelect = document.getElementById('sniSelect');
       if (sniSelect) {
         sniSelect.addEventListener('change', function() {
           const sniInput = document.getElementById('sniInput');
           if (sniInput) {
             if (this.value === 'custom') {
+              sniInput.classList.remove('hidden'); // Munculkan kolom jika pilih 'custom'
               sniInput.value = '';
               sniInput.focus();
             } else {
+              sniInput.classList.add('hidden');    // Sembunyikan jika pilih bawaan daftar
               sniInput.value = this.value;
               generateAccounts();
             }
