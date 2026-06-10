@@ -160,16 +160,10 @@ class GatewayServer {
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700;900&display=swap');
     body {
       font-family: 'JetBrains Mono', monospace;
       background-color: #050806;
-    }
-    .cyber-glow {
-      box-shadow: 0 0 15px rgba(16, 185, 129, 0.2);
-    }
-    .cyber-glow-active {
-      box-shadow: 0 0 15px rgba(16, 185, 129, 0.5);
     }
     .neon-border {
       border: 1px solid rgba(16, 185, 129, 0.3);
@@ -185,22 +179,27 @@ class GatewayServer {
 </head>
 <body class="text-slate-300 min-h-screen flex flex-col justify-between selection:bg-emerald-600 selection:text-white">
 
-  <header class="border-b border-emerald-900/50 bg-[#070b08]/80 backdrop-blur-md sticky top-0 z-50 px-6 py-4">
-    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-      <div class="flex items-center gap-3">
-        <div class="h-10 w-10 rounded-lg bg-emerald-600/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 cyber-glow animate-pulse">
-          <i class="fa-solid fa-server text-lg"></i>
+  <header class="relative overflow-hidden bg-[#020403] border-b border-emerald-500/20 px-6 py-6 shadow-[0_4px_30px_rgba(16,185,129,0.05)] sticky top-0 z-50">
+    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-emerald-500 to-transparent opacity-50"></div>
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6 z-10 relative">
+      <div class="flex items-center gap-4">
+        <div class="relative flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-900 to-black border border-emerald-500/30 shadow-[0_0_15px_rgba(16,185,129,0.2)]">
+          <i class="fa-solid fa-shield-halved text-2xl text-emerald-400"></i>
+          <div class="absolute inset-0 rounded-2xl border border-emerald-400/20 animate-ping opacity-20"></div>
         </div>
-        <div>
-          <h1 class="text-xl font-bold tracking-wider text-white">J1BTNL_CONFIG<span class="text-emerald-500">.sni</span></h1>
-          <p class="text-xs text-emerald-500/70">NETWORK NODE ACTIVE & SECURED</p>
+        <div class="flex flex-col text-center sm:text-left">
+          <h1 class="text-2xl sm:text-3xl font-black tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-500 uppercase drop-shadow-sm">
+            J1BTNL <span class="font-light text-slate-300">CORE</span>
+          </h1>
+          <p class="text-[10px] sm:text-xs uppercase tracking-[0.3em] text-emerald-500/70 font-bold mt-1">Advanced SNI Injection Protocol</p>
         </div>
       </div>
-      <div class="flex items-center gap-4">
-        <div class="flex items-center gap-2 bg-[#0a100c] neon-border px-4 py-2 rounded-lg">
-          <span class="h-2.5 w-2.5 rounded-full bg-teal-400 cyber-glow-active animate-ping"></span>
-          <span class="text-xs font-semibold text-teal-400 tracking-wider">SYSTEM ONLINE</span>
+      <div class="flex items-center gap-3 bg-[#050a07] border border-emerald-800/60 px-5 py-2.5 rounded-lg shadow-inner">
+        <div class="relative flex h-2.5 w-2.5">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
         </div>
+        <span class="text-xs font-bold text-emerald-300 tracking-widest">NETWORK: ESTABLISHED</span>
       </div>
     </div>
   </header>
@@ -238,133 +237,13 @@ class GatewayServer {
       </div>
     </div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-      
-      <div class="bg-[#0a100c] border border-emerald-900/30 rounded-xl p-6 space-y-4">
-        <div class="flex items-center gap-2 border-b border-emerald-900/30 pb-3">
-          <i class="fa-solid fa-network-wired text-emerald-400"></i>
-          <h2 class="text-md font-bold tracking-wide text-white">WEBSOCKET ROUTING ENDPOINTS</h2>
-        </div>
-        <div class="space-y-3 max-h-[420px] overflow-y-auto pr-1">
-          
-          <div class="bg-[#0c130e] border border-emerald-900/40 p-4 rounded-lg flex flex-col md:flex-row justify-between items-start md:items-center gap-3 hover:bg-[#0f1812] transition">
-            <div>
-              <span class="text-xs bg-emerald-500/10 text-emerald-400 px-2 py-0.5 rounded font-bold border border-emerald-500/20">TARGET COUNTRY</span>
-              <p class="text-sm font-semibold text-slate-200 mt-2">${protocolWs}://${currentHost}/ID</p>
-            </div>
-            <button onclick="copyText('${protocolWs}://${currentHost}/ID')" class="text-xs bg-[#080d09] border border-emerald-900/50 text-slate-400 hover:text-white hover:border-emerald-400 px-3 py-1.5 rounded transition flex items-center gap-1.5 active:scale-95">
-              <i class="fa-regular fa-copy"></i> COPY
-            </button>
-          </div>
-
-          <div class="bg-[#0c130e] border border-emerald-900/40 p-4 rounded-lg flex flex-col md:flex-row justify-between items-start md:items-center gap-3 hover:bg-[#0f1812] transition">
-            <div>
-              <span class="text-xs bg-purple-500/10 text-purple-400 px-2 py-0.5 rounded font-bold border border-purple-500/20">MULTI-COUNTRY (ROTATE)</span>
-              <p class="text-sm font-semibold text-slate-200 mt-2">${protocolWs}://${currentHost}/PROXYLIST/ID,SG,JP</p>
-            </div>
-            <button onclick="copyText('${protocolWs}://${currentHost}/PROXYLIST/ID,SG,JP')" class="text-xs bg-[#080d09] border border-emerald-900/50 text-slate-400 hover:text-white hover:border-emerald-400 px-3 py-1.5 rounded transition flex items-center gap-1.5 active:scale-95">
-              <i class="fa-regular fa-copy"></i> COPY
-            </button>
-          </div>
-
-          <div class="bg-[#0c130e] border border-emerald-900/40 p-4 rounded-lg flex flex-col md:flex-row justify-between items-start md:items-center gap-3 hover:bg-[#0f1812] transition">
-            <div>
-              <span class="text-xs bg-amber-500/10 text-amber-400 px-2 py-0.5 rounded font-bold border border-amber-500/20">REGION MATRICES</span>
-              <p class="text-sm font-semibold text-slate-200 mt-2">${protocolWs}://${currentHost}/ASIA</p>
-            </div>
-            <button onclick="copyText('${protocolWs}://${currentHost}/ASIA')" class="text-xs bg-[#080d09] border border-emerald-900/50 text-slate-400 hover:text-white hover:border-emerald-400 px-3 py-1.5 rounded transition flex items-center gap-1.5 active:scale-95">
-              <i class="fa-regular fa-copy"></i> COPY
-            </button>
-          </div>
-
-          <div class="bg-[#0c130e] border border-emerald-900/40 p-4 rounded-lg flex flex-col md:flex-row justify-between items-start md:items-center gap-3 hover:bg-[#0f1812] transition">
-            <div>
-              <span class="text-xs bg-cyan-500/10 text-cyan-400 px-2 py-0.5 rounded font-bold border border-cyan-500/20">GLOBAL CLUSTER</span>
-              <p class="text-sm font-semibold text-slate-200 mt-2">${protocolWs}://${currentHost}/ALL</p>
-            </div>
-            <button onclick="copyText('${protocolWs}://${currentHost}/ALL')" class="text-xs bg-[#080d09] border border-emerald-900/50 text-slate-400 hover:text-white hover:border-emerald-400 px-3 py-1.5 rounded transition flex items-center gap-1.5 active:scale-95">
-              <i class="fa-regular fa-copy"></i> COPY
-            </button>
-          </div>
-
-        </div>
-      </div>
-
-      <div class="bg-[#0a100c] border border-emerald-900/30 rounded-xl p-6 space-y-4">
-        <div class="flex items-center gap-2 border-b border-emerald-900/30 pb-3">
-          <i class="fa-solid fa-gears text-teal-400"></i>
-          <h2 class="text-md font-bold tracking-wide text-white">REST INTEGRATION ENDPOINTS</h2>
-        </div>
-        <div class="space-y-3">
-          
-          <div class="bg-[#0c130e] border border-emerald-900/40 p-4 rounded-lg flex items-center justify-between hover:bg-[#0f1812] transition">
-            <div>
-              <span class="text-[10px] bg-teal-500/10 text-teal-400 px-2 py-0.5 rounded font-bold border border-teal-500/20 mr-2">GET</span>
-              <span class="text-xs text-slate-500 font-medium">JSON LIST DIRECTORY</span>
-              <p class="text-sm font-semibold text-slate-200 mt-2">/api/proxies</p>
-            </div>
-            <a href="${protocolHttp}://${currentHost}/api/proxies" target="_blank" class="text-xs bg-emerald-600/10 border border-emerald-500/20 text-emerald-400 hover:bg-emerald-600 hover:text-white px-3 py-1.5 rounded transition">
-              <i class="fa-solid fa-arrow-up-right-from-square"></i> TEST
-            </a>
-          </div>
-
-          <div class="bg-[#0c130e] border border-emerald-900/40 p-4 rounded-lg flex items-center justify-between hover:bg-[#0f1812] transition">
-            <div>
-              <span class="text-[10px] bg-teal-500/10 text-teal-400 px-2 py-0.5 rounded font-bold border border-teal-500/20 mr-2">GET</span>
-              <span class="text-xs text-slate-500 font-medium">PLAIN STRING PARSED</span>
-              <p class="text-sm font-semibold text-slate-200 mt-2">/api/proxies?format=text</p>
-            </div>
-            <a href="${protocolHttp}://${currentHost}/api/proxies?format=text" target="_blank" class="text-xs bg-emerald-600/10 border border-emerald-500/20 text-emerald-400 hover:bg-emerald-600 hover:text-white px-3 py-1.5 rounded transition">
-              <i class="fa-solid fa-arrow-up-right-from-square"></i> TEST
-            </a>
-          </div>
-
-          <div class="bg-[#0c130e] border border-emerald-900/40 p-4 rounded-lg flex items-center justify-between hover:bg-[#0f1812] transition">
-            <div>
-              <span class="text-[10px] bg-teal-500/10 text-teal-400 px-2 py-0.5 rounded font-bold border border-teal-500/20 mr-2">GET</span>
-              <span class="text-xs text-slate-500 font-medium">MICRO-CORE HEALTH MONITOR</span>
-              <p class="text-sm font-semibold text-slate-200 mt-2">/health</p>
-            </div>
-            <a href="${protocolHttp}://${currentHost}/health" target="_blank" class="text-xs bg-emerald-600/10 border border-emerald-500/20 text-emerald-400 hover:bg-emerald-600 hover:text-white px-3 py-1.5 rounded transition">
-              <i class="fa-solid fa-arrow-up-right-from-square"></i> TEST
-            </a>
-          </div>
-
-        </div>
-      </div>
-
-    </div>
-
-    <div class="bg-[#0a100c] border border-emerald-900/30 rounded-xl p-6 space-y-4">
-      <div class="flex items-center gap-2 border-b border-emerald-900/30 pb-3">
-        <i class="fa-solid fa-rectangle-list text-cyan-400"></i>
-        <h2 class="text-md font-bold tracking-wide text-white">INTEGRATION EXECUTION EXAMPLES</h2>
-      </div>
-      <div class="bg-[#060a07] rounded-lg p-5 border border-emerald-950 font-mono text-xs sm:text-sm text-slate-400 space-y-4 overflow-x-auto">
-        <div>
-          <p class="text-slate-600 mb-1">// Query cluster via terminal cli line</p>
-          <div class="flex items-center justify-between bg-[#080d0a] p-3 rounded border border-emerald-900/30">
-            <span class="text-emerald-400">curl ${protocolHttp}://${currentHost}/api/proxies</span>
-            <button onclick="copyText('curl ${protocolHttp}://${currentHost}/api/proxies')" class="text-slate-600 hover:text-emerald-400 transition"><i class="fa-regular fa-copy"></i></button>
-          </div>
-        </div>
-        <div>
-          <p class="text-slate-600 mb-1">// Direct tunneling streaming live mapping</p>
-          <div class="flex items-center justify-between bg-[#080d0a] p-3 rounded border border-emerald-900/30">
-            <span class="text-teal-400">wscat -c ${protocolWs}://${currentHost}/ID</span>
-            <button onclick="copyText('wscat -c ${protocolWs}://${currentHost}/ID')" class="text-slate-600 hover:text-teal-400 transition"><i class="fa-regular fa-copy"></i></button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="bg-[#0a100c] border border-emerald-900/30 rounded-xl p-6 space-y-5">
+    <div class="bg-[#0a100c] border border-emerald-900/30 rounded-xl p-6 space-y-5 shadow-lg shadow-black/50">
       <div class="flex items-center gap-2 border-b border-emerald-900/30 pb-3">
         <i class="fa-solid fa-key text-emerald-400"></i>
         <h2 class="text-md font-bold tracking-wide text-white">VLESS / TROJAN ACCOUNT GENERATOR</h2>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         
         <div class="space-y-4">
           <div>
@@ -423,7 +302,7 @@ class GatewayServer {
                 <option value="c.whatsapp.com">💬 c.whatsapp.com</option>
                 <option value="web.whatsapp.com">🌐 web.whatsapp.com</option>
                 <option value="v.whatsapp.net">📞 v.whatsapp.net</option>
-                <option value="custom">✏️ CUSTOM SNI...</option>
+                <option value="live.iflix.com">🎬 live.iflix.com</option> <option value="custom">✏️ CUSTOM SNI...</option>
               </select>
               <input id="sniInput" type="text" value="business.whatsapp.com" 
                      class="w-full bg-[#0c130e] border border-emerald-900/50 rounded-lg px-3 py-2 text-sm text-white font-mono focus:border-teal-500 focus:outline-none transition"
@@ -439,45 +318,51 @@ class GatewayServer {
           </div>
 
           <button id="generateBtn" 
-                  class="w-full bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold py-2.5 px-4 rounded-lg transition text-sm flex items-center justify-center gap-2 active:scale-95 shadow-lg shadow-emerald-900/50">
-            <i class="fa-solid fa-bolt"></i> GENERATE ACCOUNTS
+                  class="w-full bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold py-3 px-4 rounded-lg transition text-sm flex items-center justify-center gap-2 active:scale-95 shadow-lg shadow-emerald-900/50 mt-4">
+            <i class="fa-solid fa-bolt"></i> GENERATE CONFIG ACCOUNTS
           </button>
         </div>
 
-        <div class="space-y-3">
-          <label class="text-xs text-slate-400 font-medium block">📋 Hasil Generate</label>
+        <div class="space-y-4">
+          <label class="text-sm text-emerald-400 font-bold block border-b border-emerald-900/50 pb-2">📋 Hasil Generate</label>
           
-          <div class="space-y-2">
-            <div class="bg-[#060a07] rounded-lg p-4 border border-emerald-950">
+          <div class="space-y-3">
+            <div class="bg-[#060a07] rounded-lg p-4 border border-emerald-950 hover:border-emerald-800 transition">
               <div class="flex items-center justify-between mb-2">
-                <span class="text-[10px] bg-purple-500/10 text-purple-400 px-2 py-0.5 rounded font-bold border border-purple-500/20">VLESS</span>
+                <span class="text-[10px] bg-purple-500/10 text-purple-400 px-2 py-0.5 rounded font-bold border border-purple-500/20">VLESS PROTOCOL</span>
                 <button onclick="copyText(document.getElementById('vlessOutput').textContent)" 
-                        class="text-xs bg-[#0c130e] border border-emerald-900/50 text-slate-400 hover:text-emerald-400 px-2 py-1 rounded transition flex items-center gap-1">
+                        class="text-xs bg-[#0c130e] border border-emerald-900/50 text-slate-400 hover:text-emerald-400 px-3 py-1.5 rounded transition flex items-center gap-1 active:scale-95">
                   <i class="fa-regular fa-copy"></i> COPY
                 </button>
               </div>
-              <p id="vlessOutput" class="text-xs text-purple-300 font-mono break-all leading-relaxed bg-[#080d0a] p-2 rounded border border-emerald-900/30">
+              <p id="vlessOutput" class="text-xs text-purple-300 font-mono break-all leading-relaxed bg-[#080d0a] p-3 rounded border border-emerald-900/30">
                 Loading...
               </p>
             </div>
 
-            <div class="bg-[#060a07] rounded-lg p-4 border border-emerald-950">
+            <div class="bg-[#060a07] rounded-lg p-4 border border-emerald-950 hover:border-emerald-800 transition">
               <div class="flex items-center justify-between mb-2">
-                <span class="text-[10px] bg-orange-500/10 text-orange-400 px-2 py-0.5 rounded font-bold border border-orange-500/20">TROJAN</span>
+                <span class="text-[10px] bg-orange-500/10 text-orange-400 px-2 py-0.5 rounded font-bold border border-orange-500/20">TROJAN PROTOCOL</span>
                 <button onclick="copyText(document.getElementById('trojanOutput').textContent)" 
-                        class="text-xs bg-[#0c130e] border border-emerald-900/50 text-slate-400 hover:text-emerald-400 px-2 py-1 rounded transition flex items-center gap-1">
+                        class="text-xs bg-[#0c130e] border border-emerald-900/50 text-slate-400 hover:text-emerald-400 px-3 py-1.5 rounded transition flex items-center gap-1 active:scale-95">
                   <i class="fa-regular fa-copy"></i> COPY
                 </button>
               </div>
-              <p id="trojanOutput" class="text-xs text-orange-300 font-mono break-all leading-relaxed bg-[#080d0a] p-2 rounded border border-emerald-900/30">
+              <p id="trojanOutput" class="text-xs text-orange-300 font-mono break-all leading-relaxed bg-[#080d0a] p-3 rounded border border-emerald-900/30">
                 Loading...
               </p>
             </div>
           </div>
 
-          <div class="bg-[#0c130e] border border-emerald-900/50 rounded-lg p-3">
-            <p class="text-[10px] text-slate-500 mb-1">🔗 FORMAT IMPORT CLASH META / V2RAY</p>
-            <pre id="clashOutput" class="text-[11px] text-slate-400 font-mono break-all leading-relaxed whitespace-pre-wrap bg-[#080d0a] p-2 rounded border border-emerald-900/30 max-h-48 overflow-y-auto">Loading...</pre>
+          <div class="bg-[#0c130e] border border-emerald-900/50 rounded-lg p-4 mt-2">
+            <div class="flex items-center justify-between mb-2">
+              <p class="text-[10px] font-bold text-emerald-500/80">🔗 CLASH META / V2RAY RAW CONFIG</p>
+              <button onclick="copyText(document.getElementById('clashOutput').textContent)" 
+                      class="text-xs text-slate-400 hover:text-emerald-400 transition flex items-center gap-1">
+                <i class="fa-regular fa-copy"></i>
+              </button>
+            </div>
+            <pre id="clashOutput" class="text-[11px] text-slate-400 font-mono break-all leading-relaxed whitespace-pre-wrap bg-[#080d0a] p-3 rounded border border-emerald-900/30 max-h-56 overflow-y-auto">Loading...</pre>
           </div>
         </div>
 
@@ -486,14 +371,14 @@ class GatewayServer {
 
   </main>
 
-  <footer class="border-t border-emerald-950 bg-[#040605] px-6 py-4 text-center text-xs text-slate-600">
-    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
+  <footer class="border-t border-emerald-950 bg-[#040605] px-6 py-5 text-center text-xs text-slate-600">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
       <p>&copy; ${new Date().getFullYear()} J1BTNL CONFIG SNI. ALL SYSTEM VECTORS OPERATIONAL.</p>
-      <p class="flex items-center gap-1"><i class="fa-solid fa-shield text-emerald-500/40"></i> SECURED BY END-TO-END KERNEL TUNNEL</p>
+      <p class="flex items-center gap-2"><i class="fa-solid fa-shield-check text-emerald-500/60"></i> SECURED BY END-TO-END KERNEL TUNNEL</p>
     </div>
   </footer>
 
-  <div id="toast" class="fixed bottom-6 right-6 bg-emerald-600 text-white font-semibold px-4 py-2.5 rounded-lg shadow-lg shadow-emerald-900/50 opacity-0 pointer-events-none transition-all duration-300 transform translate-y-2 text-xs z-50 flex items-center gap-2">
+  <div id="toast" class="fixed bottom-6 right-6 bg-emerald-600 text-white font-semibold px-4 py-3 rounded-lg shadow-lg shadow-emerald-900/50 opacity-0 pointer-events-none transition-all duration-300 transform translate-y-2 text-xs z-50 flex items-center gap-2 border border-emerald-400/50">
     <i class="fa-solid fa-circle-check"></i> ENDPOINT COPIED TO CLIPBOARD
   </div>
 
@@ -515,11 +400,11 @@ class GatewayServer {
     let start = ${Math.floor(process.uptime())};
     setInterval(() => {
       start++;
-      document.getElementById('uptime-val').innerText = start + 's';
+      const uptimeEl = document.getElementById('uptime-val');
+      if(uptimeEl) uptimeEl.innerText = start + 's';
     }, 1000);
 
     // ==================== GENERATOR SCRIPTS ====================
-
     function generateUUID() {
       const uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
         const r = Math.random() * 16 | 0;
@@ -556,7 +441,6 @@ class GatewayServer {
         const clashOut = document.getElementById('clashOutput');
 
         if (!uuidEl || !hostEl || !portEl || !pathEl || !sniEl || !remarkEl || !vlessOut || !trojanOut || !clashOut) {
-          console.log('Generator: Waiting for DOM...');
           return;
         }
 
@@ -621,14 +505,11 @@ class GatewayServer {
       }
     }
 
-    // ==================== EVENT LISTENERS (SAFE) ====================
-    
-    // Generate pertama kali
+    // ==================== EVENT LISTENERS ====================
     setTimeout(function() {
       generateAccounts();
     }, 300);
 
-    // Real-time update
     setTimeout(function() {
       const elements = ['uuidInput', 'hostInput', 'portInput', 'pathInput', 'sniInput', 'remarkInput'];
       elements.forEach(function(id) {
@@ -638,7 +519,6 @@ class GatewayServer {
         }
       });
 
-      // Path select
       const pathSelect = document.getElementById('pathSelect');
       if (pathSelect) {
         pathSelect.addEventListener('change', function() {
@@ -650,7 +530,6 @@ class GatewayServer {
         });
       }
 
-      // SNI select
       const sniSelect = document.getElementById('sniSelect');
       if (sniSelect) {
         sniSelect.addEventListener('change', function() {
@@ -667,7 +546,6 @@ class GatewayServer {
         });
       }
 
-      // Generate button
       const genBtn = document.getElementById('generateBtn');
       if (genBtn) {
         genBtn.addEventListener('click', function(e) {
@@ -676,7 +554,6 @@ class GatewayServer {
         });
       }
 
-      // Random UUID button
       const randBtn = document.getElementById('randomUuidBtn');
       if (randBtn) {
         randBtn.addEventListener('click', function(e) {
